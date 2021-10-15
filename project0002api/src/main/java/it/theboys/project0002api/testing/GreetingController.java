@@ -1,4 +1,4 @@
-package it.theboys.project0002api.model.testing;
+package it.theboys.project0002api.testing;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
