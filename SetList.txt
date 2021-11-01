@@ -1,0 +1,1526 @@
+[
+  {
+    "setName": "Cards Against Humanity: Family Edition (Free Print & Play Public Beta)",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: First Expansion",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: Second Expansion",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: Third Expansion",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: Fourth Expansion",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: Fifth Expansion",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: Sixth Expansion",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: Red Box Expansion",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: Blue Box Expansion",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: Green Box Expansion",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: Absurd Box Expansion",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: Everything Box Expansion",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: Bigger Blacker Box/Box Expansion",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: Card Lab",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: Procedurally-Generated Cards",
+    "setExpansion": 0
+  },
+  {
+    "setName": "Cards Against Humanity: Main Deck (All Versions)",
+    "setExpansion": 1
+  },
+  {
+    "setName": "Cards Against Humanity: Canadian Conversion Kit",
+    "setExpansion": 1
+  },
+  {
+    "setName": "Cards Against Humanity: UK Conversion Kit",
+    "setExpansion": 1
+  },
+  {
+    "setName": "Cards Against Humanity: 2000s Nostalgia Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: 2012 Holiday Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: 2013 Holiday Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: 2014 Holiday Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: 90s Nostalgia Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: A.I. Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Ass Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Blackbox Press Kit",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: ClickHole Greeting Cards Pack (Target Exclusive)",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: College Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Dad Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Desert Bus For Hope Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Design Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Fantasy Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Fascism Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Food Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Geek Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Gen Con 2018 Midterm Elections Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Hanukkah LOL Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Hawaii 2 Safe Cards",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Hidden Compartment Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: HIdden Gems Bundle: A Few New Cards We Crammed Into This Bundle Pack (Amazon Exclusive)",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: House of Cards Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Human Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Jack White Show Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Jew Pack/Chosen People Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Mass Effect Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Midterm Pack 2018 (Cards Against Humanity Hacks the Election version)",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity  Nasty Bundle: A Few Extra Nasty Cards For You People",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Nerd Bundle: A Few More Cards For You Nerds (Target Exclusive)",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: PAX 2012 \"Oops\" Kit",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: PAX East 2013 Promo Pack A",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: PAX East 2013 Promo Pack B",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: PAX East 2013 Promo Pack C",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: PAX East 2014",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: PAX East 2014 - Panel Cards",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: PAX Prime 2013",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: PAX Prime 2014 - Panel Cards",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: PAX Prime 2014 Custom Printed Cards",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: PAX Prime 2015 Food Pack A (Mango)",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: PAX Prime 2015 Food Pack B (Coconut)",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: PAX Prime 2015 Food Pack C (Cherry)",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Period Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Picture Card Pack 1",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Picture Card Pack 2",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Pride Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Reject Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Reject Pack 2",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Reject Pack 3",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Retail Mini Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Retail Product Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Saves America Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Saves America Pack (CAH Store version)",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Sci-Fi Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Science Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Seasons Greetings Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Tabletop Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Theatre Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Theatre Pack - CATS Musical Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Trump Bug Out Bag/Post-Trump Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Vote For Hillary Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Vote For Trump Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: Weed Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Cards Against Humanity: World Wide Web Pack",
+    "setExpansion": 2
+  },
+  {
+    "setName": "Bachelorettes Against Decency",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Box Against BIGBANG",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Box Against HIMYM",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Cards Against Australia",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Cards Against Bikini Bottom",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Cards Against Halloween",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Cards Against Muggles",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Cards Against Murder",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Cards Against Potter",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Cards Against Rick And Morty",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Cards Against Star Wars",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Cards Against the Iron Throne",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Cards Against Wizardry",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Cards Against Your Childhood",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Cards Against Your Childhood (PDF)",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Cards That Trump Humanity",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Horrors Amidst Insanity",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Paper Against The Office",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Paper Against The Office 2",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Parks Against Recreation",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "SuperWhoLock Against Humanity",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "The One With All The Cards",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "WTF NY?",
+    "setExpansion": "Etsy"
+  },
+  {
+    "setName": "Achievement Hunter Cards Against Humanity",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection - Reject Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection - Reject Pack 2",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 1.0",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 10.0",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 10.0 - Rocky Horror Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 2.0",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 2.0 - Book of Mormon Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 3.0",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 3.0 - It Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 4.0",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 4.0 - Breaking Bad Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 5.0",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 5.0 - Halloween Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 6.0",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 6.0 - Pushing Daisies Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 7.0",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 7.0 - Ash vs Evil Dead Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 8.0",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 8.0 - Dr. Horrible Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 9.0",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Andre Collection 9.0 - Firefly Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Babies Against Parenthood",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Bangover.net METAL AF Expansion Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Bards Against Humanity",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Berlynn Wohl Customs: Cards Against Hamilton",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Berlynn Wohl Customs: Cards Against Hannibal",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Berlynn Wohl Customs: Cards Against Hannibal First Expansion",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Berlynn Wohl Customs: Cards Against Hannibal Second Expansion",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Berlynn Wohl Customs: Cards Against Night Vale",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Carbs Against Humanity",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Archer",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Astronomy",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Coachella",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Cybertron",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Fashion",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Gallifrey (ConventionalImprov set)",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Hogwarts",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Humanity: Anzu Edition",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Humanity: Disney Edition (Serg Beret)",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Humanity: Disney Expansion (Disney Lies)",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Humanity: Imgur Expansion",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Humanity: Los Angeles Edition (L.A. Weekly)",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Humanity: Reason's State of the Union Version",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Humanity: Wheelchair Expansion",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Librarianship",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Mars",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against Misogyny",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against MST3K",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against the Empire",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards Against the Realm",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Cards of Mass Destruction",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Charms Around Hogwarts: Demiguise Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Charms Around Hogwarts: Fwooper Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Charms Around Hogwarts: Graphorn Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Charms Around Hogwarts: Runespoor Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Charms Around Hogwarts: Unicorn Pack",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Craps & Laughs - Core Set",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Dan Against Humanity",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Fandoms Against Humanity",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Feminist Cards Against Humanity",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Feminist Cards Against Humanity Part Two",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Gears Against Humanity",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Grads Research Psychology: General",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Grads Research Psychology: Psychology",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Grads Research Psychology: Research and Publication",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Grognards Against Humanity",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Hawaii 2 Custom Cards",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Joshteon Vs. The World: It's A Game",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Ladies Against Humanity",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Libertarians Against Humanity - Vol. 1",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Libertarians Against Humanity - Vol. 2",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Libertarians Against Humanity - Vol. 3",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Libertarians Against Humanity - Vol. 4",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Musicals Against Humanity",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Musicians Against Humanity",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Nerds Against Humanity",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Style Against Humanity",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "The Card Game That Can't Be Named",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "The Most Popular Girls Against Humanity",
+    "setExpansion": "Fan Expansions"
+  },
+  {
+    "setName": "Brewers Against Turbidity",
+    "setExpansion": "Kickstarter"
+  },
+  {
+    "setName": "Cardis Against Humanity",
+    "setExpansion": "Kickstarter"
+  },
+  {
+    "setName": "Cards Against Grif",
+    "setExpansion": "Kickstarter"
+  },
+  {
+    "setName": "Cards of Liberty",
+    "setExpansion": "Kickstarter"
+  },
+  {
+    "setName": "Cons Against Our Sanity: Volume One",
+    "setExpansion": "Kickstarter"
+  },
+  {
+    "setName": "Cons Against Our Sanity: Volume Two",
+    "setExpansion": "Kickstarter"
+  },
+  {
+    "setName": "Limpeh Says",
+    "setExpansion": "Kickstarter"
+  },
+  {
+    "setName": "Limpeh Wishes You A Happy New Year",
+    "setExpansion": "Kickstarter"
+  },
+  {
+    "setName": "Oh",
+    "setExpansion": "For Humanity's Sake!"
+  },
+  {
+    "setName": "The Bay Area Expansion",
+    "setExpansion": "Kickstarter"
+  },
+  {
+    "setName": "Tired of London",
+    "setExpansion": "Kickstarter"
+  },
+  {
+    "setName": "Wilted Green",
+    "setExpansion": "Kickstarter"
+  },
+  {
+    "setName": "Carbs Amidst Humility",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cards Against Equestria",
+    "setExpansion": "V.1"
+  },
+  {
+    "setName": "Cards Against Millenials",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cards Against Philadelphia",
+    "setExpansion": "Expansion Pack 1"
+  },
+  {
+    "setName": "Cards Against Your Face: Cards Against Civility",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cards Against Your Face: Cards Against Humility",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cards Against Your Face: Cards Against Pervertity",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cards Against Your Face: Cards Against Reality",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cards Against Your Face: Cards Against Senility",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cards Against Your Face: Cards Against Stupidity",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cards Opposing Society: Back In Black Pack",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cards Opposing Society: Black Even Worse 1",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cards Opposing Society: White 2",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cards Opposing Society: White 3",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Chaos Aghast Vulgarity (Whats In A Name)",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Chaos Aghast Vulgarity Question Cards",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Chaos Aghast Vulgarity Volume 1",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Chaos Aghast Vulgarity Volume 2; Another Sick Expansion",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cooks Attract Matrimony",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cords Against Harmony - Volume 1",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cords Against Harmony - Volume 2",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cords Against Harmony - Volume 3",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cords Against the 80s",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cords Against Trekkies",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Cults Attempt Hokypoky",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "EMBOWAFA (Eat My Butt Out With A Fork Asshole)",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Ferengi Rules Against Harmony",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Geeks vs Harsh Reality",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Geeks vs Harsh Reality: Expansion 1",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Holy Fucking Hell Set 1",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Holy Fucking Hell Set 2",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Rocky Horror Picture Show Cards Against Humanity",
+    "setExpansion": "Print On Demand"
+  },
+  {
+    "setName": "Turds Against Equality",
+    "setExpansion": "Vol. 1"
+  },
+  {
+    "setName": "Cards Against Caninity",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Cards Against Creativity",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Cards Against Downtime",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Cards Against Fan Fiction",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Cards Against Gallifrey (Doctor Who Gallifrey One set)",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Cards Against Infosec",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Cards Against IT",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Cards Against Mediocrity",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Cards Against Science",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Cards Against Security",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Cards Against Wonderland",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Cats Against the World",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Citizens Against Hypocrisy",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Cruise Against Hodgman",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Cruise Against Hodgman 2: Cruise Harder",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Cruise Against Hodgman 3: Revenge of Hodgman",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Hackers Against Humanity",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "Target College Cards Made For U",
+    "setExpansion": "Special Purpose"
+  },
+  {
+    "setName": "2016 Election Game",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Babies vs. Parents",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Bad Campaign",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Bards Dispense Profanity",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Cads About Maternity",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Cads About Matrimony",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Cads About Matrimony Poly Pack",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Cads About Matrimony: Expansion 1",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Cads Against Adulting",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Cards Against Profanity",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Cards Against/For South Africa",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Cards for South Africa Expansion (Crowdsourced Cards)",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Cards for the Masses",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Conspiracy Theory",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Conspiracy Theory - Kickstarter Bonus Cards Pack",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Depravity",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Dick",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Dirty Nasty Filthy - A Card Game for Twisted Minds",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Disgrunteld Decks: Marine Corps/Jarhead Edition",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Disgruntled Decks: Air Force Edition",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Disgruntled Decks: Army Edition",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Disgruntled Decks: Coast Guard/Coastie Edition",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Disgruntled Decks: Navy Edition",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Evil Apples: Dirty as ____. (Limited First Edition)",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Fun in the Oven",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Hilarious!",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Humanity Hates The Holidays",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Humanity Hates The Holidays \"Love\" Edition",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Humanity Hates Trump: Base Set",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Humanity Hates Trump: Expansion Pack 1",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Humanity Hates Trump: Expansion Pack 2 - Humanity Hates Hillary",
+    "setExpansion": "Too"
+  },
+  {
+    "setName": "Humanity Hates Trump: Kickstarter Promo Cards",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Kids Against Maturity",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Kids Create Absurdity",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Kiwis Against Morality",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Kiwis Versus Morality",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Not Parent Approved",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Not Parent Approved Expansion Pack #1",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Not Parent Approved Expansion Pack #2",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Personally Incorrect",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Personally Incorrect - Expansion",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Personally Incorrect - Expansion 2",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Potheads Against Sanity",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Rotten Apples: The Tasteless Adult Party Game",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Skewered And Roasted",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "That's What She Said Game",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "That's What She Said Game - First Expansion",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "That's What She Said Game - Second Expansion",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "The Catholic Card Game: Base Set",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "The Catholic Card Game: Five Deck Expansion Pack",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "The Catholic Card Game: Generations Expansion Pack",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "The Catholic Card Game: Teen Life Expansion Pack",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "The Game Without Decency",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "The Game Without Decency: Party Box Edition",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Trumped UpCards: Alternative Facts Expansion Pack",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Trumped UpCards: Astonishingly Excellent Wealthcare! Expansion Pack",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Trumped UpCards: Many Sides Expansion Pack",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Trumped UpCards: The World's Biggest Deck*",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "WTF Did You Say?!?",
+    "setExpansion": "Stand Alone Games"
+  },
+  {
+    "setName": "Bad Hombres Against Fake News Pack 1",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Blurbs Against Buffalo",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cakes Athirst Hilarity Volume 1",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cakes Athirst Hilarity Volume 2",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cakes Athirst Hilarity Volume 3",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cakes Athirst Hilarity Volume 4",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Carbs of the Huge Manatee: Dance Expansion 1",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Carbs of the Huge Manatee: General Expansion 1",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Carbs of the Huge Manatee: General Expansion 2",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Carbs of the Huge Manatee: General Expansion 3",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Carbs of the Huge Manatee: Kink Expansion 1",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Carbs of the Huge Manatee: Online Dating Expansion 1",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cards About Toronto",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cards and Punishment Vol. One",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cards and Punishment Vol. Two",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cards With No Sexuality",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cards With No Sexuality - Vol. 2",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Carps & Angsty Manatee - Texas Edition",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Carps & Angsty Manatee - Volume 1",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Carps & Angsty Manatee - Volume 2",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cats Abiding Horribly Bonus Cards",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cats Abiding Horribly Bonus Cards 2",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cats Abiding Horribly: Episode I - The Dirty Goblin",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cats Abiding Horribly: Episode II - A New Low",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cats Abiding Horribly: Episode III - The SJWs Strike Back",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Charlie Foxtrot",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Clams Attempt Harmonica",
+    "setExpansion": "Volume 1"
+  },
+  {
+    "setName": "Clones Attack Hilarity #1",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Clones Attack Hilarity #2",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cocks Abreast Hostility: Cock Pack One: Just The Tip",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cocks Abreast Hostility: Cock Pack Two: Fowls Deep",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cols Against Kentucky 2",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cols Despite Kentucky",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cows Against Hamburgers - Patty Pack #1",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Cows Grilling Hamburgers - Patty Pack #1",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Crabs Adjust Humidity: Volume 1 (also in Omniclaw)",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Crabs Adjust Humidity: Volume 2 (also in Omniclaw)",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Crabs Adjust Humidity: Volume 3 (also in Omniclaw)",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Crabs Adjust Humidity: Volume 4 (also in Omniclaw)",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Crabs Adjust Humidity: Volume 5 (also in Omniclaw)",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Crabs Adjust Humidity: Volume 6",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Crabs Adjust Humidity: Volume 7",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Crazy & Horrible Rabbit - Vol. 1",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Crows Adopt Vulgarity",
+    "setExpansion": "Vol. 1"
+  },
+  {
+    "setName": "Crows Adopt Vulgarity",
+    "setExpansion": "Vol. 2"
+  },
+  {
+    "setName": "Crows Adopt Vulgarity",
+    "setExpansion": "Vol. 3"
+  },
+  {
+    "setName": "Crows Adopt Vulgarity",
+    "setExpansion": "Vol. 4"
+  },
+  {
+    "setName": "Guards Against Insanity",
+    "setExpansion": "Edition 1 (also in Asylum Pack)"
+  },
+  {
+    "setName": "Guards Against Insanity",
+    "setExpansion": "Edition 2 (also in Asylum Pack)"
+  },
+  {
+    "setName": "Guards Against Insanity",
+    "setExpansion": "Edition 3 (also in Asylum Pack)"
+  },
+  {
+    "setName": "Guards Against Insanity",
+    "setExpansion": "Edition 4 (also in Asylum Pack)"
+  },
+  {
+    "setName": "Guards Against Insanity",
+    "setExpansion": "Edition 5"
+  },
+  {
+    "setName": "JadedAid",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "JadedAid: Peace Corps Expansion Pack",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "KinderPerfect (Commerical Set)",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "KinderPerfect (Kickstarter Set)",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "KinderPerfect: More Expansion Pack",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "KinderPerfect: Naughty Expansion Pack",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "KinderPerfect: Tween Expansion Pack",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Knitters Against Swatches First Edition",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Knitters Against Swatches Second Edition",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Pigs Against Profanity: Volume 1",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Pigs Against Profanity: Volume 2",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Pigs Against Profanity: Volume 3",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "The Worst Card Game: 2016 National Edition",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "The Worst Card Game: Colorado Edition",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Voter's Choice: The First Expansion",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Voter's Choice: The Fourth Expansion",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Voter's Choice: The Second Expansion",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Voter's Choice: The Third Expansion",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Words Against Morality: Volume 1",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Words Against Morality: Volume 2",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Words Against Morality: Volume 3",
+    "setExpansion": "Third Party Commercial"
+  },
+  {
+    "setName": "Words Against Morality: Volume 4",
+    "setExpansion": "Third Party Commercial"
+  }
+]

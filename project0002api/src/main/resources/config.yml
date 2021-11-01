@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      user: dbAdmin
+      password: <ezr50TF0oNL4XVJU>
+      uri: mongodb+srv://it-the-boys-project0002.as59i.mongodb.net/projectDB?retryWrites=true&w=majority
