@@ -4,5 +4,6 @@ public enum CahGamePhase {
     DRAW,
     DRAW_QUESTION,
     ANSWER_PICKING,
-    WINNER_PICKING;
+    WINNER_PICKING,
+    END;
 }

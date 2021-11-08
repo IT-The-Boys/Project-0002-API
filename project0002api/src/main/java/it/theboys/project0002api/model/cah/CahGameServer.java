@@ -62,7 +62,7 @@ public class CahGameServer {
 
     public String pickAnswer(CahPlayer player, List<CahCard> answer){
         for (CahPlayer player:playerList){
-                player.getPlayerAnswer().size()>0
+                player.getPlayerAnswer().size() > 0
 
         }
     }
@@ -72,6 +72,7 @@ public class CahGameServer {
         for (CahPlayer player:playerList){
             player.clearAnswer();
         }
+        gameRound++;
         newRound();
     }
 
@@ -87,9 +88,9 @@ public class CahGameServer {
         gamePhase=CahGamePhase.DRAW;
     }
 
-    private void draw(){
+    private void draw(int handSize){
         for (CahPlayer player:playerList){
-            while(player.getPlayerHand().size() <= 11){
+            while(player.getPlayerHand().size() <= handSize){
                 player.draw(new CahCard());
             }
         }
