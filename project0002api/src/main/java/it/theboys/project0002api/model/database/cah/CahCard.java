@@ -7,7 +7,7 @@ import it.theboys.project0002api.enums.cah.CahCardType;
 import it.theboys.project0002api.model.database.CardEdition;
 import it.theboys.project0002api.model.database.CardSet;
 import it.theboys.project0002api.model.database.CardTheme;
-import it.theboys.project0002api.utils.json.deserializer.CardDeserializer;
+import it.theboys.project0002api.utils.json.deserializer.CahCardDeserializer;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
@@ -21,7 +21,8 @@ import javax.validation.constraints.NotNull;
 @CompoundIndexes({
         @CompoundIndex(name = "set_name_idx", def = "{'cardSet' : 1, 'cardName': 1}", unique = true)
 })
-@JsonDeserialize(using = CardDeserializer.class)
+@JsonDeserialize(using = CahCardDeserializer.class)
+
 @Document(collection = "CAHCards")
 public class CahCard {
     @Id

@@ -1,13 +1,11 @@
 package it.theboys.project0002api.utils.database;
 
 import it.theboys.project0002api.dto.database.FilterConditionDto;
+import it.theboys.project0002api.enums.FilterOperationEnum;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -34,8 +32,10 @@ public class MongoQueryBuilderUtils {
 
     private final List<FilterConditionDto> filterAndConditions;
     private final List<FilterConditionDto> filterOrConditions;
+    private final Map<String, String> ignoreCaseConditions;
 
     public MongoQueryBuilderUtils() {
+        this.ignoreCaseConditions = new HashMap<>();
         this.filterAndConditions = new ArrayList<>();
         this.filterOrConditions = new ArrayList<>();
     }
@@ -45,9 +45,10 @@ public class MongoQueryBuilderUtils {
      *
      * @param andConditions and conditions
      * @param orConditions  or conditions
+     * @param textFields text fields list for search
      * @return Query
      */
-    public Query addCondition(List<FilterConditionDto> andConditions, List<FilterConditionDto> orConditions) {
+    public Query addCondition(List<FilterConditionDto> andConditions, List<FilterConditionDto> orConditions, String... textFields) {
         // check if conditions isn null
         if (andConditions != null && !andConditions.isEmpty()) {
             filterAndConditions.addAll(andConditions);
@@ -60,20 +61,39 @@ public class MongoQueryBuilderUtils {
         List<Criteria> orCriteriaOperator = new ArrayList<>();
         Criteria criteria = new Criteria();
         // build criteria from conditions
-        filterAndConditions.stream().map(condition -> andCriteriaOperator.add(buildCriteria(condition))).collect(Collectors.toList());
-        filterOrConditions.stream().map(condition -> orCriteriaOperator.add(buildCriteria(condition))).collect(Collectors.toList());
 
+        extractConditions(andCriteriaOperator, filterAndConditions, textFields);
+        extractConditions(orCriteriaOperator, filterOrConditions, textFields);
+
+
+        Query result = new Query();
         //check if operators non NULL
         if (!andCriteriaOperator.isEmpty() && !orCriteriaOperator.isEmpty()) {
-            return new Query(criteria.andOperator(andCriteriaOperator.toArray(new Criteria[0])).orOperator(orCriteriaOperator.toArray(new Criteria[0])));
+           result.addCriteria(criteria.andOperator(andCriteriaOperator.toArray(new Criteria[0])).orOperator(orCriteriaOperator.toArray(new Criteria[0])));
         } else if (!andCriteriaOperator.isEmpty()) {
-            return new Query(criteria.andOperator(andCriteriaOperator.toArray(new Criteria[0])));
+            result.addCriteria(criteria.andOperator(andCriteriaOperator.toArray(new Criteria[0])));
         } else if (!orCriteriaOperator.isEmpty()) {
-            return new Query(criteria.orOperator(orCriteriaOperator.toArray(new Criteria[0])));
-        } else {
-            // if all is empty return default Query
-            return new Query();
+            result.addCriteria(criteria.orOperator(orCriteriaOperator.toArray(new Criteria[0])));
         }
+        // add case ignore to textFields
+        ignoreCaseConditions.forEach(
+                (key, value) -> result.addCriteria(
+                        Criteria.where(key).regex(".*" + value + ".*", "i")));
+        return result;
+    }
+
+    private void extractConditions(List<Criteria> orCriteriaOperator, List<FilterConditionDto> filterOrConditions, String[] textFields) {
+        filterOrConditions.stream().map(
+                condition -> {
+                    if (Arrays.stream(textFields).toList().contains(condition.getField())&&
+                            condition.getOperator()== FilterOperationEnum.CONTAINS){
+                        ignoreCaseConditions.put(condition.getField(), condition.getValue().toString());
+                        return null;
+                    } else {
+                        return orCriteriaOperator.add(buildCriteria(condition));
+                    }
+
+                }).collect(Collectors.toList());
     }
 
     /**

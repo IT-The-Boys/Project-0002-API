@@ -86,7 +86,10 @@ public class FilterBuilderUtils {
                         List<String> filter = splitString(x, FILTER_CONDITION_DELIMITER);
                         // check if there is condition in criteria
                         if (FilterOperationEnum.fromValue(filter.get(1)) != null) {
-                            filters.add(new FilterConditionDto(filter.get(0), FilterOperationEnum.fromValue(filter.get(1)), filter.get(2)));
+                            filters.add(
+                                    new FilterConditionDto(filter.get(0),
+                                            FilterOperationEnum.fromValue(filter.get(1)),
+                                            filter.get(2)));
                         }
                     });
                 }

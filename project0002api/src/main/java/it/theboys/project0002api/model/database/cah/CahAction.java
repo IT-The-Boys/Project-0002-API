@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class CahAction {
-    private int pick;
-    private int draw;
+    private int pick=1;
+    private int draw=0;
 }

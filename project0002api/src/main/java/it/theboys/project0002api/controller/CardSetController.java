@@ -3,17 +3,20 @@ package it.theboys.project0002api.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import it.theboys.project0002api.dto.database.QueryWithPageDTO;
-import it.theboys.project0002api.dto.http.response.PageResponseDTO;
+import it.theboys.project0002api.dto.http.response.PageResponseDto;
+import it.theboys.project0002api.dto.http.response.PagedSetWithCardsResponseDto;
 import it.theboys.project0002api.enums.GameName;
 import it.theboys.project0002api.exception.database.BadRequestException;
 import it.theboys.project0002api.exception.database.CardSetCollectionException;
 import it.theboys.project0002api.exception.database.ImmutableFieldException;
 import it.theboys.project0002api.model.database.CardSet;
+import it.theboys.project0002api.model.database.cah.CahCard;
 import it.theboys.project0002api.service.cardgame.CardService;
 import it.theboys.project0002api.utils.ControllerUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.core.convert.ConversionFailedException;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +40,7 @@ public class CardSetController {
      * @param filterOr   string filter or conditions
      * @param filterAnd  string filter and conditions
      * @param orderBy    sting order items by
-     * @return ResponseEntity with PageResponseDTO for {@link CardSet}
+     * @return ResponseEntity with PageResponseDto for {@link CardSet}
      */
     @GetMapping("/{gameName}/set/page")
     public ResponseEntity<?> fetchSetByPages(
@@ -49,14 +52,14 @@ public class CardSetController {
             @RequestParam(value = "orderBy", required = false) String orderBy) {
         // initialize variable to be returned
         try {
-            PageResponseDTO<CardSet> responseBody = new PageResponseDTO<>();
+            PageResponseDto<CardSet> responseBody = new PageResponseDto<>();
             // append gameName filter to filters
-            filterAnd=filterAnd.concat(String.format(
+            filterAnd = filterAnd.concat(String.format(
                     "%sgameName|eq|%s",
-                    filterAnd.length()>0 ? "&" : "",
+                    filterAnd.length() > 0 ? "&" : "",
                     gameName));
             QueryWithPageDTO serviceRequest = new ControllerUtils().generateFilterAndPaginationRepositoryQuery(
-                    pageSize, pageNumber, orderBy, filterAnd, filterOr);
+                    pageSize, pageNumber, orderBy, filterAnd, filterOr, "setName");
             Page<CardSet> page = cardService.getSetPages(serviceRequest);
             responseBody.setPageStats(page, page.getContent());
             return new ResponseEntity<>(responseBody, HttpStatus.OK);
@@ -81,11 +84,11 @@ public class CardSetController {
         try {
 
             Query serviceRequest = new ControllerUtils().generateFilterRepositoryQuery(
-                    filterAnd, filterOr);
+                    filterAnd, filterOr, "setName");
             // append gameName filter to filters
-            filterAnd=filterAnd.concat(String.format(
+            filterAnd = filterAnd.concat(String.format(
                     "%sgameName|eq|%s",
-                    filterAnd.length()>0 ? "&" : "",
+                    filterAnd.length() > 0 ? "&" : "",
                     gameName));
             List<CardSet> responseBody = cardService.getSets(serviceRequest);
             return new ResponseEntity<>(responseBody, HttpStatus.OK);
@@ -102,6 +105,27 @@ public class CardSetController {
      * @return ResponseEntity with results
      * @throws CardSetCollectionException CardSet Validation Errors
      */
+    @GetMapping("/{gameName}/set/{id}/page")
+    public ResponseEntity<?> fetchSetPage(
+            @PathVariable String gameName,
+            @PathVariable String id,
+            @RequestParam(value = "pageNumber", defaultValue = "0") int pageNumber,
+            @RequestParam(value = "pageSize", defaultValue = "20") int pageSize,
+            @RequestParam(value = "orderBy", required = false) String orderBy
+    ) throws CardSetCollectionException {
+        PagedSetWithCardsResponseDto<CahCard, CardSet> responseBody = new PagedSetWithCardsResponseDto<>();
+        try {
+            Pageable pageable = new ControllerUtils().generatePagination(
+                    pageSize, pageNumber, orderBy);
+            responseBody = cardService.getSetPageById(id, pageable);
+            return new ResponseEntity<>(responseBody, HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+
+    }
+
     @GetMapping("/{gameName}/set/{id}")
     public ResponseEntity<?> fetchSet(
             @PathVariable String gameName,
@@ -109,8 +133,9 @@ public class CardSetController {
     ) throws CardSetCollectionException {
         try {
             return new ResponseEntity<>(cardService.getSetById(id), HttpStatus.OK);
+
         } catch (Exception e) {
-            return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
 
     }

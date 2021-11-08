@@ -3,12 +3,15 @@ package it.theboys.project0002api.service.cardgame;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import it.theboys.project0002api.dto.database.QueryWithPageDTO;
 import it.theboys.project0002api.dto.http.request.AddCardRequestDto;
+import it.theboys.project0002api.dto.http.response.PagedSetWithCardsResponseDto;
+import it.theboys.project0002api.dto.http.response.SetWithCardsResponseDto;
 import it.theboys.project0002api.enums.GameName;
 import it.theboys.project0002api.exception.database.CardSetCollectionException;
 import it.theboys.project0002api.exception.database.ImmutableFieldException;
 import it.theboys.project0002api.model.database.CardSet;
 import it.theboys.project0002api.model.database.cah.CahCard;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.query.Query;
 
 import java.util.List;
@@ -49,8 +52,16 @@ public interface CardService {
      * @param id set ID
      * @return CardSet
      */
-    CardSet getSetById(String id) throws CardSetCollectionException;
+    SetWithCardsResponseDto getSetById(String id) throws CardSetCollectionException;
 
+    /**
+     * Return Set Info and all cards in this set
+     *
+     * @param id set ID
+     * @param pageable
+     * @return CardSet
+     */
+    PagedSetWithCardsResponseDto<CahCard,CardSet> getSetPageById(String id, Pageable pageable) throws CardSetCollectionException;
     /**
      * Update Set with ID by new data
      *
@@ -87,4 +98,5 @@ public interface CardService {
     List<CahCard> getCards(Query serviceRequest);
 
 
+    List<CardSet> getAllSets(GameName gameName);
 }

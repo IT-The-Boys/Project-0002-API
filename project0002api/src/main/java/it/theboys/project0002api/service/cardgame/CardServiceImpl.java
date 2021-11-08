@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import it.theboys.project0002api.dto.database.QueryWithPageDTO;
 import it.theboys.project0002api.dto.http.request.AddCardRequestDto;
 import it.theboys.project0002api.dto.http.request.AddSetRequestDto;
+import it.theboys.project0002api.dto.http.response.PagedSetWithCardsResponseDto;
+import it.theboys.project0002api.dto.http.response.SetWithCardsResponseDto;
 import it.theboys.project0002api.enums.GameName;
 import it.theboys.project0002api.exception.database.CardSetCollectionException;
 import it.theboys.project0002api.exception.database.ImmutableFieldException;
@@ -16,6 +18,7 @@ import it.theboys.project0002api.repository.CardSetRepository;
 import it.theboys.project0002api.utils.ObjectUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
@@ -46,7 +49,7 @@ public class CardServiceImpl implements CardService {
         List<CardSet> existed = new ArrayList<>();
         setList.getSetList().forEach(
                 (set) -> {
-                    Optional<CardSet> setInDB = setRepo.findCardSetByGameNameAndSetName(gameName.toString(), set.getSetName());
+                    Optional<CardSet> setInDB = setRepo.findCardSetByGameNameAndSetName(gameName, set.getSetName());
                     if (setInDB.isPresent()) {
                         existed.add(set);
                     } else {
@@ -79,13 +82,36 @@ public class CardServiceImpl implements CardService {
 
     /**
      * {@inheritDoc}
+     * @return
      */
     @Override
-    public CardSet getSetById(String id) throws CardSetCollectionException {
-
+    public PagedSetWithCardsResponseDto<CahCard, CardSet> getSetPageById(String id, Pageable pageable) throws CardSetCollectionException {
         Optional<CardSet> set = setRepo.findById(id);
         if (set.isPresent()) {
-            return set.get();
+            PagedSetWithCardsResponseDto<CahCard, CardSet> responseBody = new PagedSetWithCardsResponseDto<>();
+            CardSet setData = set.get();
+            responseBody.setInfo(setData);
+            Page<CahCard> page=cahRepo.findPagedCahCardByCardSet(setData, pageable);
+            responseBody.setPageStats(page, page.getContent());
+            return responseBody;
+        } else {
+            throw new CardSetCollectionException(CardSetCollectionException.NotFoundException(id));
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     * @return
+     */
+    @Override
+    public SetWithCardsResponseDto getSetById(String id) throws CardSetCollectionException {
+        Optional<CardSet> set = setRepo.findById(id);
+        if (set.isPresent()) {
+            CardSet setData = set.get();
+            SetWithCardsResponseDto responseBody=new SetWithCardsResponseDto();
+            responseBody.setSetInfo(setData);
+            responseBody.setCardList(cahRepo.findCahCardByCardSet(setData));
+            return responseBody;
         } else {
             throw new CardSetCollectionException(CardSetCollectionException.NotFoundException(id));
         }
@@ -152,6 +178,7 @@ public class CardServiceImpl implements CardService {
             if (cardInDB.isPresent()) {
 
             } else {
+                // add card set to card instance
                 card.setCardSet(cardSet.get());
                 card.setAddedAt(Instant.now().toEpochMilli());
                 cahRepo.save(card);
@@ -175,6 +202,11 @@ public class CardServiceImpl implements CardService {
     @Override
     public List<CahCard> getCards(Query serviceRequest) {
         return cahRepo.findAll(serviceRequest);
+    }
+
+    @Override
+    public List<CardSet> getAllSets(GameName gameName) {
+        return setRepo.findCardSetByGameName(gameName);
     }
 
 
