@@ -3,8 +3,6 @@ package it.theboys.project0002api.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import it.theboys.project0002api.dto.database.QueryWithPageDTO;
-import it.theboys.project0002api.dto.http.response.PageResponseDto;
-import it.theboys.project0002api.dto.http.response.PagedSetWithCardsResponseDto;
 import it.theboys.project0002api.enums.GameName;
 import it.theboys.project0002api.exception.database.BadRequestException;
 import it.theboys.project0002api.exception.database.CardSetCollectionException;

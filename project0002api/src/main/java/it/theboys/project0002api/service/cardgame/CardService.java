@@ -2,9 +2,6 @@ package it.theboys.project0002api.service.cardgame;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import it.theboys.project0002api.dto.database.QueryWithPageDTO;
-import it.theboys.project0002api.dto.http.request.AddCardRequestDto;
-import it.theboys.project0002api.dto.http.response.PagedSetWithCardsResponseDto;
-import it.theboys.project0002api.dto.http.response.SetWithCardsResponseDto;
 import it.theboys.project0002api.enums.GameName;
 import it.theboys.project0002api.exception.database.CardSetCollectionException;
 import it.theboys.project0002api.exception.database.ImmutableFieldException;
