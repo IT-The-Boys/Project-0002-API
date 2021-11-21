@@ -19,6 +19,7 @@ public class LobbyController {
 
     @GetMapping("/lobby")
     public ResponseEntity<?> getLobbyList(){
+
         return new ResponseEntity<>(lobbyService.getLobbyList(), HttpStatus.OK);
     }
     @GetMapping("/{gameName}/lobby")
@@ -39,9 +40,9 @@ public class LobbyController {
     @PostMapping("/{gameName}/lobby/leave")
     public ResponseEntity<?> leaveLobby(
             @PathVariable GameName gameName,
-            @RequestBody String request) throws LobbyException {
+            Principal principal) throws LobbyException {
         try {
-            return new ResponseEntity<>(lobbyService.leaveLobby(gameName, request), HttpStatus.OK);
+            return new ResponseEntity<>(lobbyService.leaveLobby(gameName, principal.getName()), HttpStatus.OK);
         } catch (LobbyException le){
             return new ResponseEntity<>(le.getMessage(),HttpStatus.NOT_FOUND);
         }

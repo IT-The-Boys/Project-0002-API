@@ -39,6 +39,7 @@ public class LobbyStorage {
         return lobbyList;
     };
     public void setLobby(Lobby lobby) {
+
         lobbyList.put(lobby.getLobbyId(), lobby);
     }
 }
