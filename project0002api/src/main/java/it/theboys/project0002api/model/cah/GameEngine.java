@@ -1,12 +1,22 @@
 package it.theboys.project0002api.model.cah;
 
 import lombok.Data;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.pircbotx.Colors;
 
+import it.theboys.project0002api.model.cah.Player;
 import it.theboys.project0002api.enums.cah.GameServerStatus;
 import it.theboys.project0002api.model.Card;
-import it.theboys.project0002api.model.Player;
+import it.theboys.project0002api.model.card.BlackCard;
+import it.theboys.project0002api.model.card.WhiteCard;
 
 @Data
 public class GameEngine {
@@ -19,9 +29,16 @@ public class GameEngine {
    private String serverId;
    private String serverName;
    private String settings;
+   public ArrayList<Player> players;
+   public ArrayList<Player> playerIter;
+   public List<WhiteCard> whiteCards;
+   public ArrayList<BlackCard> blackCards;
+   public Player czar;
 
    private int currentRound;
-   private int currentKaiser;
+   private GameServerStatus status;
+   private Player player;
+
 
    public void setServerHost(String Host){
        this.serverHost = Host;
@@ -72,19 +89,7 @@ public class GameEngine {
        return currentRound;
    }
 
-   public void setCurrentKaiser(int kaiser){
-       this.currentKaiser = kaiser;
-   }
-   public int getCurrentKaiser(){
-       return currentKaiser;
-   }
 
-   public void choseWhiteCard(){
-       Player player = new Player();
-       for(int i = 0; i <= player.playerList.size(); i++){
-           //playerがwhiteカードを選ぶ処理
-       }
-   }
 
    public void judgeCard(Player player, Card whiteCard){
        //select winner
@@ -94,16 +99,54 @@ public class GameEngine {
        //winnerを次のKaizerに設定
    }
 
-
-   private GameServerStatus status;
-
    public void run(){
 
    }
 
-   public String getCards(final Player player){
-       return "test card";
+
+   public Player getPlayer(final String username){
+       for(final Player player : this.players){
+           if(player.getName().equals(username)){
+               return player;
+           }
+       }
+       return null;
    }
+
+
+   public String getCards(final Player player){
+       this.player = player;
+    final StringBuilder sb = new StringBuilder();
+       int i = 1;
+       for(final WhiteCard card : player.getCards()){
+           sb.append(i + " [" + Colors.BOLD + card.getColored() + "] ");
+           i++;
+       }
+       return sb.toString();
+   }
+
+   public Player getCzar(){
+       Collections.shuffle(this.players);
+       if(this.players.get(0) == this.czar){
+           return this.getCzar();
+       }
+       return this.players.get(0);
+   }
+
+   public void nextRound(){
+       if(this.players.size() < 3){
+           this.status = GameServerStatus.NOT_ENOUGH_PLAYERS;
+           return;
+       }
+   }
+
+   //カード準備
+   private void setupCards(){
+       this.players = new ArrayList<Player>();
+       this .whiteCards = Collections.synchronizedList(new ArrayList<WhiteCard>());
+       this.blackCards = new ArrayList<BlackCard>();
+   }
+
 
    public void start() throws Exception{
        status = GameServerStatus.RUNNING;
@@ -118,9 +161,10 @@ public class GameEngine {
         }
         String[] users = new String[players.size()];
         for(int i = 0; i < players.size(); i++){
+
             users[i] = players.get(i).getName();
         }
-        this.kaiser = this.players.get(0);
+        this.czar = this.players.get(0);
         this.nextRound();
    }
 
