@@ -6,6 +6,7 @@ public enum GameServerStatus {
     RUNNING,
     PAUSED,
     TERMINATED,
-    NOT_ENOUGH_PLAYERS
+    NOT_ENOUGH_PLAYERS,
+    CZAR_TURN
 
 }
