@@ -120,12 +120,7 @@ public class GameEngine {
 
     public String getCards(final Player player){
         this.player = player;
-    final StringBuilder sb = new StringBuilder();
-        int i = 1;
-        for(final WhiteCard card : player.getCards()){
-            sb.append(i + " [" + card.getColored() + "] ");
-            i++;
-        }
+        final StringBuilder sb = new StringBuilder();
         return sb.toString();
     }
 
