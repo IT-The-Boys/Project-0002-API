@@ -6,4 +6,5 @@ import lombok.Data;
 public class Send {
     
     private String chatId;
+    private String message;
 }

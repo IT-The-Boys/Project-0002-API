@@ -6,16 +6,16 @@ import java.util.Map;
 import it.theboys.project0002api.model.Chat;
 
 public class ChatStorage {
-    
+
     private static Map<String, Chat> chats;
     private static ChatStorage instance;
-    
-    private ChatStorage(){
+
+    private ChatStorage() {
         chats = new HashMap<>();
     }
 
-    public static synchronized ChatStorage getInstance(){
-        if(instance == null){
+    public static synchronized ChatStorage getInstance() {
+        if (instance == null) {
             instance = new ChatStorage();
         }
         return instance;
@@ -25,7 +25,7 @@ public class ChatStorage {
         return chats;
     }
 
-    public void setChat(Chat chat){
+    public void setChat(Chat chat) {
         chats.put(chat.getChatId(), chat);
     }
 }

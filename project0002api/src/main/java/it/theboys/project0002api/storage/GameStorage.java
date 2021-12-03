@@ -10,12 +10,12 @@ public class GameStorage {
     private static Map<String, Game> games;
     private static GameStorage instance;
 
-    private GameStorage(){
+    private GameStorage() {
         games = new HashMap<>();
     }
 
-    public static synchronized GameStorage getInstance(){
-        if(instance == null){
+    public static synchronized GameStorage getInstance() {
+        if (instance == null) {
             instance = new GameStorage();
         }
         return instance;
@@ -25,7 +25,7 @@ public class GameStorage {
         return games;
     }
 
-    public void setGame(Game game){
+    public void setGame(Game game) {
         games.put(game.getGameId(), game);
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import it.theboys.project0002api.model.GameServer;
+import it.theboys.project0002api.model.Game;
 import it.theboys.project0002api.model.Lobby;
 import it.theboys.project0002api.service.LobbyService;
 import lombok.AllArgsConstructor;
@@ -22,12 +22,12 @@ import lombok.extern.slf4j.Slf4j;
 public class LobbyController {
 
     private final LobbyService lobbyService;
-    //private final SimpMessagingTemplate simpMessagingTemplate;
+    // private final SimpMessagingTemplate simpMessagingTemplate;
 
     @PostMapping("/start")
-    public ResponseEntity<Map<Lobby, List<?>>> start(@RequestBody GameServer gameServer){
-        log.info("start lobby request: {}", gameServer);
-        return ResponseEntity.ok(lobbyService.addGameServer(gameServer));
+    public ResponseEntity<Map<Lobby, List<?>>> start(@RequestBody Game game) {
+        log.info("start lobby request: {}", game);
+        return ResponseEntity.ok(lobbyService.addGameServer(game));
     }
-    
+
 }

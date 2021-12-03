@@ -26,27 +26,37 @@ public class ChatController {
     private final ChatService chatService;
     private final SimpMessagingTemplate simpMessagingTemplate;
 
-
-    //Do we need a start for chat??
+    // Right I just call the service when the game starts so I dont think we need
+    // the postmapping for start and connect
     @PostMapping("/start")
-    public ResponseEntity<Chat> start(@RequestBody Player player){
+    public ResponseEntity<Chat> start(@RequestBody Player player) {
         log.info("start chat request: {}", player);
         return ResponseEntity.ok(chatService.createChat(player));
     }
 
     @PostMapping("/connect")
-    public ResponseEntity<Chat> connect(@RequestBody ConnectRequest request) throws InvalidParamException, InvalidChatException{
+    public ResponseEntity<Chat> connect(@RequestBody ConnectRequest request)
+            throws InvalidParamException, InvalidChatException {
         log.info("connect request: {}", request);
         return ResponseEntity.ok(chatService.connectToChat(request.getPlayer(), request.getChatId()));
     }
 
+    // Room chat
     @PostMapping("/send")
-    public ResponseEntity<Chat> send(@RequestBody Send request) throws NotFoundException, InvalidChatException{
+    public ResponseEntity<Chat> send(@RequestBody Send request) throws NotFoundException, InvalidChatException {
         log.info("send: {}", request);
         Chat chat = chatService.send(request);
         simpMessagingTemplate.convertAndSend("/topic/chat/" + chat.getChatId(), chat);
         return ResponseEntity.ok(chat);
     }
 
-    
+    // Global chat
+    @PostMapping("/send/global")
+    public ResponseEntity<Chat> sendGlobal(@RequestBody Send request) throws NotFoundException, InvalidChatException {
+        log.info("send: {}", request);
+        Chat chat = chatService.send(request);
+        simpMessagingTemplate.convertAndSend("/topic/chat/global", chat);
+        return ResponseEntity.ok(chat);
+    }
+
 }
