@@ -1,17 +1,19 @@
 package it.theboys.project0002api.model.cah;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import it.theboys.project0002api.enums.cah.GameServerStatus;
 import it.theboys.project0002api.model.card.BlackCard;
 import it.theboys.project0002api.model.card.WhiteCard;
+import it.theboys.project0002api.runnable.Startup;
 import lombok.Data;
 
 @Data
 public class GameEngine {
 
-    public static void main(final String[] args){
+    public static void main(final String[] args) throws IOException{
         System.out.println("Starting...");
         new GameEngine();
     }
@@ -161,5 +163,11 @@ public class GameEngine {
         }
         this.czar = this.players.get(0);
         this.nextRound();
+    }
+
+    public GameEngine() throws IOException {
+        this.gameStatus = GameServerStatus.START;
+        this.setupCards();
+        new Startup(this).start();
     }
 }
