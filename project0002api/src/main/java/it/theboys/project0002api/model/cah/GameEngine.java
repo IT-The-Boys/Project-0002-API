@@ -28,8 +28,7 @@ public class GameEngine {
     public ArrayList<BlackCard> blackCards;
     public Player czar;
     public GameServerStatus gameStatus;
-
-
+    
     private int currentRound;
     private GameServerStatus status;
     private Player player;
@@ -144,9 +143,7 @@ public class GameEngine {
         this.players = new ArrayList<Player>();
         this .whiteCards = Collections.synchronizedList(new ArrayList<WhiteCard>());
         this.blackCards = new ArrayList<BlackCard>();
-        
     }
-
 
     public void start() throws Exception{
         status = GameServerStatus.RUNNING;
