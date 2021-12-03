@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import it.theboys.project0002api.controller.dto.ConnectRequest;
+import it.theboys.project0002api.exception.InvalidChatException;
 import it.theboys.project0002api.exception.InvalidGameException;
 import it.theboys.project0002api.exception.InvalidParamException;
 import it.theboys.project0002api.exception.NotFoundException;
@@ -26,6 +27,7 @@ public class GameServerController {
     private final GameServerService gameServerService;
     private final SimpMessagingTemplate simpMessagingTemplate;
 
+    //Start tested and working
     @PostMapping("/start")
     public ResponseEntity<Game> start(@RequestBody Player player) {
         log.info("start game request: {}", player);
@@ -34,9 +36,9 @@ public class GameServerController {
 
     @PostMapping("/connect")
     public ResponseEntity<Game> connect(@RequestBody ConnectRequest request)
-            throws InvalidParamException, InvalidGameException {
+            throws InvalidParamException, InvalidGameException, InvalidChatException {
         log.info("connect request: {}", request);
-        return ResponseEntity.ok(gameServerService.connectToGame(request.getPlayer(), request.getGameId()));
+        return ResponseEntity.ok(gameServerService.connectToGame(request.getPlayer(), request.getGameId(), request.getChatId()));
     }
 
     @PostMapping("/gameplay")
