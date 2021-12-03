@@ -116,7 +116,6 @@ public class GameEngine {
         return null;
     }
 
-
     public String getCards(final Player player){
         this.player = player;
         final StringBuilder sb = new StringBuilder();
@@ -156,10 +155,9 @@ public class GameEngine {
             }
             player.drawCardsForStart();
         }
-        String[] users = new String[players.size()];
         for(int i = 0; i < players.size(); i++){
 
-            users[i] = players.get(i).getName();
+            (new String[players.size()])[i] = players.get(i).getName();
         }
         this.czar = this.players.get(0);
         this.nextRound();

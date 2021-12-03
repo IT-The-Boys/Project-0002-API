@@ -99,14 +99,14 @@ public class UserController {
      * Generate view for access token Error
      *
      * @param response HTTP response for output
-     * @param e        exception
+     * @param appSecurityException        exception
      * @throws IOException error handling
      */
-    public static void TokenErrorResponse(HttpServletResponse response, Exception e) throws IOException {
-        response.setHeader("error", e.getMessage());
+    public static void TokenErrorResponse(HttpServletResponse response, AppSecurityException appSecurityException) throws IOException {
+        response.setHeader("error", appSecurityException.getMessage());
         response.setStatus(FORBIDDEN.value());
         Map<String, String> error = new HashMap<>();
-        error.put("error_message", e.getMessage());
+        error.put("error_message", appSecurityException.getMessage());
         response.setContentType(APPLICATION_JSON_VALUE);
         new ObjectMapper().writeValue(response.getOutputStream(), error);
     }
@@ -193,5 +193,4 @@ public class UserController {
     public ResponseEntity<List<String>> fetchUsernames() {
         return new ResponseEntity<List<String>>(userService.getUsernameList(), HttpStatus.OK);
     }
-
 }

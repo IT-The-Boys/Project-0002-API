@@ -50,6 +50,4 @@ public class GameController {
     public ResponseEntity<?> messageToServer(String user, String gameServerId) {
         return new ResponseEntity<>(gameService.messageToServer(user, gameServerId), HttpStatus.OK);
     }
-
-
 }

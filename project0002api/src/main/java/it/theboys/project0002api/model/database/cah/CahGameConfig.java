@@ -1,12 +1,12 @@
 package it.theboys.project0002api.model.database.cah;
 
+import java.util.List;
+
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import it.theboys.project0002api.model.database.CardSet;
-import it.theboys.project0002api.utils.json.deserializer.CahCardDeserializer;
 import it.theboys.project0002api.utils.json.serializer.CahGameConfigSerializer;
 import lombok.Data;
-
-import java.util.List;
 
 @Data
 @JsonSerialize(using = CahGameConfigSerializer.class)

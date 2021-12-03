@@ -25,7 +25,7 @@ import java.util.*;
 
 @Service
 @RequiredArgsConstructor
-public class CardServiceImpl<SetWithCardsResponseDto, AddCardRequestDto> implements CardService {
+public class CardServiceImpl<SetWithCardsResponseDto, AddCardRequestDto, AddSetRequestDto> implements CardService {
     private final CardSetRepository setRepo;
     private final CahCardRepository cahRepo;
     private final String[] immutableSetFields=new String[]{"id", "gameName", "addedAt", "updatedAt"};
@@ -204,6 +204,4 @@ public class CardServiceImpl<SetWithCardsResponseDto, AddCardRequestDto> impleme
     public List<CardSet> getAllSets(GameName gameName) {
         return setRepo.findCardSetByGameName(gameName);
     }
-
-
 }

@@ -1,10 +1,11 @@
 package it.theboys.project0002api.service.cardgame;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import it.theboys.project0002api.enums.GameName;
 import it.theboys.project0002api.model.database.cah.CahGameConfig;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor

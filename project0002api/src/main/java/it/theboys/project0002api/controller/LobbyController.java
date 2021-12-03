@@ -14,7 +14,7 @@ import it.theboys.project0002api.enums.GameName;
 
 @RestController
 @RequestMapping("/api/v1")
-public class LobbyController {
+public class LobbyController<LobbyService, Lobby> {
     @Autowired
     private LobbyService lobbyService;
 
@@ -42,7 +42,7 @@ public class LobbyController {
             @PathVariable GameName gameName,
             @RequestBody String request) throws LobbyException {
         try {
-            return new ResponseEntity<>(lobbyService.leaveLobby(gameName, request), HttpStatus.OK);
+            return new ResponseEntity<>(((Object) lobbyService).leaveLobby(gameName, request), HttpStatus.OK);
         } catch (LobbyException le){
             return new ResponseEntity<>(le.getMessage(),HttpStatus.NOT_FOUND);
         }

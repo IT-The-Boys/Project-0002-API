@@ -102,5 +102,4 @@ public class CahGameServer {
         question=new CahCard();
         gamePhase=CahGamePhase.ANSWER_PICKING;
     }
-
 }
