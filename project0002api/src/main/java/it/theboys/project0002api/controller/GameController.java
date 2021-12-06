@@ -10,13 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.theboys.project0002api.enums.GameName;
-import it.theboys.project0002api.service.cardgame.GameMainframeService;
 import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping("/api/v1/game/{gameName}/")
 @AllArgsConstructor
-public class GameController {
+public class GameController<GameMainframeService> {
     private final GameMainframeService gameService;
 
     @PostMapping("/launch")

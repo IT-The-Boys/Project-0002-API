@@ -38,7 +38,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/api/v1/user")
 @AllArgsConstructor
 @Slf4j
-public class UserController {
+public class UserController<Algorithm, JWTVerifier, DecodedJWT> {
     @Autowired
     private final UserService userService;
 
@@ -97,16 +97,17 @@ public class UserController {
 
     /**
      * Generate view for access token Error
+     * @param <AppSecurityException>
      *
      * @param response HTTP response for output
      * @param appSecurityException        exception
      * @throws IOException error handling
      */
-    public static void TokenErrorResponse(HttpServletResponse response, AppSecurityException appSecurityException) throws IOException {
-        response.setHeader("error", appSecurityException.getMessage());
+    public static <AppSecurityException> void TokenErrorResponse(HttpServletResponse response, AppSecurityException appSecurityException) throws IOException {
+        response.setHeader("error", ((Throwable) appSecurityException).getMessage());
         response.setStatus(FORBIDDEN.value());
         Map<String, String> error = new HashMap<>();
-        error.put("error_message", appSecurityException.getMessage());
+        error.put("error_message", ((Throwable) appSecurityException).getMessage());
         response.setContentType(APPLICATION_JSON_VALUE);
         new ObjectMapper().writeValue(response.getOutputStream(), error);
     }

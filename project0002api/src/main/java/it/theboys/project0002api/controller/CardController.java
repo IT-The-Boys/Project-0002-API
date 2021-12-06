@@ -20,14 +20,13 @@ import it.theboys.project0002api.enums.GameName;
 import it.theboys.project0002api.exception.database.BadRequestException;
 import it.theboys.project0002api.model.database.CardSet;
 import it.theboys.project0002api.model.database.cah.CahCard;
-import it.theboys.project0002api.service.cardgame.CardService;
 import it.theboys.project0002api.utils.ControllerUtils;
 import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping("/api/v1")
 @AllArgsConstructor
-public class CardController {
+public class CardController<cardService, CardService> {
     private final CardService cardService;
 
 

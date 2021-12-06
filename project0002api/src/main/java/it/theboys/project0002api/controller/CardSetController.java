@@ -31,14 +31,13 @@ import it.theboys.project0002api.exception.database.CardSetCollectionException;
 import it.theboys.project0002api.exception.database.ImmutableFieldException;
 import it.theboys.project0002api.model.database.CardSet;
 import it.theboys.project0002api.model.database.cah.CahCard;
-import it.theboys.project0002api.service.cardgame.CardService;
 import it.theboys.project0002api.utils.ControllerUtils;
 import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping("/api/v1")
 @AllArgsConstructor
-public class CardSetController {
+public class CardSetController<CardService> {
 
     private final CardService cardService;
 
