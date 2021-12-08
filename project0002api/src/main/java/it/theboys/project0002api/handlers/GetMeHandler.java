@@ -1,11 +1,12 @@
 package it.theboys.project0002api.handlers;
 
-import javax.security.auth.login.Configuration.Parameters;
-import javax.validation.constraints.NotNull;
 
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.data.JsonWrapper;
 import it.theboys.project0002api.data.User;
+import it.theboys.project0002api.server.Parameters;
+import io.undertow.server.HttpServerExchange;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Class to get user's nick for the game.html page - not safe to store/retrieve as a cookie.

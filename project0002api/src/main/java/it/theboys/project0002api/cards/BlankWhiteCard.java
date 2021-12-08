@@ -1,6 +1,6 @@
 package it.theboys.project0002api.cards;
 
-import org.springframework.data.mongodb.core.mapping.Unwrapped.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public class BlankWhiteCard extends WhiteCard {
     private static final String BLANK_TEXT = "____";

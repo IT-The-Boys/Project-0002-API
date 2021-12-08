@@ -1,42 +1,32 @@
 package it.theboys.project0002api.game;
 
-import java.lang.System.Logger;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.prefs.Preferences;
-
-import javax.validation.constraints.NotNull;
-
-import org.springframework.data.mongodb.core.mapping.Unwrapped.Nullable;
-
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.Utils;
 import it.theboys.project0002api.cardcast.CardcastDeck;
 import it.theboys.project0002api.cardcast.CardcastService;
 import it.theboys.project0002api.cardcast.FailedLoadingSomeCardcastDecks;
-import it.theboys.project0002api.cards.BlackCard;
-import it.theboys.project0002api.cards.BlackDeck;
-import it.theboys.project0002api.cards.BlankWhiteCard;
-import it.theboys.project0002api.cards.CardSet;
-import it.theboys.project0002api.cards.PyxCardSet;
-import it.theboys.project0002api.cards.WhiteCard;
-import it.theboys.project0002api.cards.WhiteDeck;
+import it.theboys.project0002api.cards.*;
 import it.theboys.project0002api.data.EventWrapper;
 import it.theboys.project0002api.data.JsonWrapper;
 import it.theboys.project0002api.data.QueuedMessage;
 import it.theboys.project0002api.data.User;
+import it.theboys.project0002api.server.BaseCahHandler;
+import it.theboys.project0002api.singletons.ConnectedUsers;
+import it.theboys.project0002api.singletons.GamesManager;
+import it.theboys.project0002api.singletons.LoadedCards;
+import it.theboys.project0002api.singletons.Preferences;
+import it.theboys.project0002api.task.SafeTimerTask;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class Game {
     private static final Logger logger = Logger.getLogger(Game.class);

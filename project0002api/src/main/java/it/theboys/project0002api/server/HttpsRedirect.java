@@ -1,7 +1,10 @@
 package it.theboys.project0002api.server;
 
-import org.springframework.http.server.reactive.HttpHandler;
-import org.springframework.web.servlet.function.ServerRequest.Headers;
+import org.apache.http.client.utils.URIBuilder;
+import io.undertow.server.HttpHandler;
+import io.undertow.server.HttpServerExchange;
+import io.undertow.util.Headers;
+import io.undertow.util.StatusCodes;
 
 public class HttpsRedirect implements HttpHandler {
     @Override

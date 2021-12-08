@@ -1,14 +1,21 @@
 package it.theboys.project0002api.server;
 
-import java.lang.System.Logger;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import org.springframework.data.mongodb.core.mapping.Unwrapped.Nullable;
-import org.springframework.web.servlet.function.ServerRequest.Headers;
+import org.jboss.logging.Logger;
+import org.jetbrains.annotations.Nullable;
 
+import io.undertow.server.HttpServerExchange;
+import io.undertow.server.handlers.resource.PathResourceManager;
+import io.undertow.server.handlers.resource.ResourceHandler;
+import io.undertow.server.handlers.resource.ResourceManager;
+import io.undertow.util.ETag;
+import io.undertow.util.HeaderMap;
+import io.undertow.util.Headers;
 import it.theboys.project0002api.Utils;
-import it.theboys.project0002api.server.Annotations.Preferences;
+import it.theboys.project0002api.singletons.Preferences;
+
 
 public class CustomResourceHandler extends ResourceHandler {
     private final boolean cacheEnabled;

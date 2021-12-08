@@ -1,13 +1,14 @@
 package it.theboys.project0002api.handlers;
 
-import javax.security.auth.login.Configuration.Parameters;
-import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.databind.util.Annotations;
-
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.data.JsonWrapper;
 import it.theboys.project0002api.data.User;
+import it.theboys.project0002api.server.Annotations;
+import it.theboys.project0002api.server.Parameters;
+import it.theboys.project0002api.singletons.ConnectedUsers;
+import it.theboys.project0002api.singletons.Sessions;
+import io.undertow.server.HttpServerExchange;
+import org.jetbrains.annotations.NotNull;
 
 public class LogoutHandler extends BaseHandler {
     public final static String OP = Consts.Operation.LOG_OUT.toString();

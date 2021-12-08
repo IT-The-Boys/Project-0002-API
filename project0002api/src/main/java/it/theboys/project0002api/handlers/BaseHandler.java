@@ -1,11 +1,11 @@
 package it.theboys.project0002api.handlers;
 
-import java.security.Policy.Parameters;
-
-import javax.validation.constraints.NotNull;
-
 import it.theboys.project0002api.data.JsonWrapper;
 import it.theboys.project0002api.data.User;
+import it.theboys.project0002api.server.BaseJsonHandler;
+import it.theboys.project0002api.server.Parameters;
+import io.undertow.server.HttpServerExchange;
+import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseHandler {
     @NotNull

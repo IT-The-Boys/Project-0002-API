@@ -1,11 +1,13 @@
 package it.theboys.project0002api.handlers;
 
-import javax.security.auth.login.Configuration.Parameters;
-import javax.validation.constraints.NotNull;
 
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.data.JsonWrapper;
 import it.theboys.project0002api.data.User;
+import it.theboys.project0002api.data.accounts.UserAccount;
+import it.theboys.project0002api.server.Parameters;
+import io.undertow.server.HttpServerExchange;
+import org.jetbrains.annotations.NotNull;
 
 public class GetUserPreferencesHandler extends BaseHandler {
     public static final String OP = Consts.Operation.GET_USER_PREFERENCES.toString();

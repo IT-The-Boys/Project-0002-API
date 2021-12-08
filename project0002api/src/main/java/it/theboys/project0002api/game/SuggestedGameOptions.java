@@ -1,12 +1,11 @@
 package it.theboys.project0002api.game;
 
-import java.util.prefs.Preferences;
-
-import javax.validation.constraints.NotNull;
-
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.data.JsonWrapper;
 import it.theboys.project0002api.data.User;
+import it.theboys.project0002api.singletons.Preferences;
+import org.jetbrains.annotations.NotNull;
+
 
 public class SuggestedGameOptions extends GameOptions {
     private final User suggester;

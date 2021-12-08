@@ -1,17 +1,20 @@
 package it.theboys.project0002api.handlers;
 
-import java.util.Map;
-
-import javax.security.auth.login.Configuration.Parameters;
-import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.databind.util.Annotations;
 
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.data.JsonWrapper;
 import it.theboys.project0002api.data.User;
 import it.theboys.project0002api.game.Game;
 import it.theboys.project0002api.game.SuggestedGameOptions;
+import it.theboys.project0002api.server.Annotations;
+import it.theboys.project0002api.server.BaseCahHandler;
+import it.theboys.project0002api.server.Parameters;
+import it.theboys.project0002api.singletons.GamesManager;
+import com.google.gson.JsonArray;
+import io.undertow.server.HttpServerExchange;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Map;
 
 public class GetSuggestedGameOptionsHandler extends GameWithPlayerHandler {
     public static final String OP = Consts.Operation.GET_SUGGESTED_GAME_OPTIONS.toString();

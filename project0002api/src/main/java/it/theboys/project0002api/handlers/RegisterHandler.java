@@ -1,35 +1,36 @@
 package it.theboys.project0002api.handlers;
 
-import java.text.ParseException;
-import java.util.regex.Pattern;
-
-import javax.security.auth.login.Configuration.Parameters;
-import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.databind.util.Annotations;
-
-import org.springframework.data.mongodb.core.mapping.Unwrapped.Nullable;
-import org.springframework.security.crypto.bcrypt.BCrypt;
-
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.data.JsonWrapper;
 import it.theboys.project0002api.data.User;
+import it.theboys.project0002api.data.accounts.PasswordAccount;
+import it.theboys.project0002api.data.accounts.UserAccount;
+import it.theboys.project0002api.server.Annotations;
+import it.theboys.project0002api.server.BaseCahHandler;
+import it.theboys.project0002api.server.BaseJsonHandler;
+import it.theboys.project0002api.server.Parameters;
+import it.theboys.project0002api.singletons.*;
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
+import io.undertow.server.HttpServerExchange;
+import io.undertow.server.handlers.CookieImpl;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.mindrot.jbcrypt.BCrypt;
+
+import java.text.ParseException;
+import java.util.regex.Pattern;
 
 public class RegisterHandler extends BaseHandler {
     public static final String OP = Consts.Operation.REGISTER.toString();
     private final BanList banList;
-    private final UsersWithAccount accounts;
     private final ConnectedUsers users;
-    private final SocialLogin socialLogin;
 
     public RegisterHandler(@Annotations.BanList BanList banList,
                            @Annotations.UsersWithAccount UsersWithAccount accounts,
-                           @Annotations.ConnectedUsers ConnectedUsers users,
-                           @Annotations.SocialLogin SocialLogin socialLogin) {
+                           @Annotations.ConnectedUsers ConnectedUsers users) {
         this.banList = banList;
         this.accounts = accounts;
         this.users = users;
-        this.socialLogin = socialLogin;
     }
 
     @NotNull

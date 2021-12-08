@@ -1,6 +1,6 @@
 package it.theboys.project0002api.task;
 
-import org.slf4j.Logger;
+import org.apache.log4j.Logger;
 
 public abstract class SafeTimerTask implements Runnable {
     private static final Logger logger = Logger.getLogger(SafeTimerTask.class);

@@ -1,6 +1,8 @@
 package it.theboys.project0002api.data;
 
 import it.theboys.project0002api.Consts;
+import it.theboys.project0002api.game.Game;
+
 
 public class EventWrapper extends JsonWrapper {
 

@@ -1,12 +1,8 @@
 package it.theboys.project0002api.cards;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import it.theboys.project0002api.game.OutOfCardsException;
 
+import java.util.*;
 
 /**
  * Deck of White Cards.

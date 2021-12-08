@@ -1,19 +1,18 @@
 package it.theboys.project0002api.game;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.prefs.Preferences;
-
-import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.core.JsonParser;
-
-import org.bson.json.JsonObject;
-
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.Utils;
 import it.theboys.project0002api.data.JsonWrapper;
+import it.theboys.project0002api.singletons.Preferences;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class GameOptions {
     public static final int DEFAULT_SCORE_MIN = 4;

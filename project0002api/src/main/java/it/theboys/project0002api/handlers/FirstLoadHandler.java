@@ -1,19 +1,21 @@
 package it.theboys.project0002api.handlers;
 
-import java.util.Set;
-import java.util.prefs.Preferences;
-
-import javax.security.auth.login.Configuration.Parameters;
-import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.databind.util.Annotations;
-
 
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.cards.PyxCardSet;
 import it.theboys.project0002api.data.JsonWrapper;
 import it.theboys.project0002api.data.User;
 import it.theboys.project0002api.game.GameOptions;
+import it.theboys.project0002api.server.Annotations;
+import it.theboys.project0002api.server.Parameters;
+import it.theboys.project0002api.singletons.Emails;
+import it.theboys.project0002api.singletons.LoadedCards;
+import it.theboys.project0002api.singletons.Preferences;
+import com.google.gson.JsonArray;
+import io.undertow.server.HttpServerExchange;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Set;
 
 public class FirstLoadHandler extends BaseHandler {
     public static final String OP = Consts.Operation.FIRST_LOAD.toString();
@@ -24,7 +26,6 @@ public class FirstLoadHandler extends BaseHandler {
 
     public FirstLoadHandler(@Annotations.LoadedCards LoadedCards loadedCards,
                             @Annotations.Emails Emails emails,
-                            @Annotations.SocialLogin SocialLogin socials,
                             @Annotations.Preferences Preferences preferences) {
         serverStatusPage = preferences.getStringNotEmpty("serverStatusPage", null);
 
@@ -36,10 +37,6 @@ public class FirstLoadHandler extends BaseHandler {
 
         authConfig = new JsonWrapper();
         if (emails.enabled()) authConfig.add(Consts.AuthType.PASSWORD, emails.senderEmail());
-        if (socials.googleEnabled()) authConfig.add(Consts.AuthType.GOOGLE, socials.googleAppId());
-        if (socials.facebookEnabled()) authConfig.add(Consts.AuthType.FACEBOOK, socials.facebookAppId());
-        if (socials.githubEnabled()) authConfig.add(Consts.AuthType.GITHUB, socials.githubAppId());
-        if (socials.twitterEnabled()) authConfig.add(Consts.AuthType.TWITTER, socials.twitterAppId());
     }
 
     @NotNull

@@ -1,16 +1,17 @@
 package it.theboys.project0002api.handlers;
 
-import java.util.prefs.Preferences;
-
-import javax.security.auth.login.Configuration.Parameters;
-import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.databind.util.Annotations;
 
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.data.JsonWrapper;
 import it.theboys.project0002api.data.User;
 import it.theboys.project0002api.game.GameOptions;
+import it.theboys.project0002api.server.Annotations;
+import it.theboys.project0002api.server.BaseJsonHandler;
+import it.theboys.project0002api.server.Parameters;
+import it.theboys.project0002api.singletons.GamesManager;
+import it.theboys.project0002api.singletons.Preferences;
+import io.undertow.server.HttpServerExchange;
+import org.jetbrains.annotations.NotNull;
 
 public class CreateGameHandler extends BaseHandler {
     public static final String OP = Consts.Operation.CREATE_GAME.toString();

@@ -3,6 +3,7 @@ package it.theboys.project0002api.cards;
 import java.util.Set;
 
 import it.theboys.project0002api.Consts;
+import it.theboys.project0002api.data.JsonWrapper;
 
 
 public abstract class CardSet {

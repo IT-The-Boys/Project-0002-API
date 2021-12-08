@@ -2,10 +2,11 @@ package it.theboys.project0002api.data;
 
 import java.util.Map;
 
-import javax.validation.constraints.NotNull;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
-import org.bson.json.JsonObject;
-import org.springframework.data.mongodb.core.mapping.Unwrapped.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.Utils;

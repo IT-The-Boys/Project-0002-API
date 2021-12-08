@@ -1,5 +1,7 @@
 package it.theboys.project0002api.cards;
 
+import it.theboys.project0002api.singletons.LoadedCards;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;

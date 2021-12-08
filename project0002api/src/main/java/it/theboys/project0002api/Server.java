@@ -3,12 +3,10 @@ package it.theboys.project0002api;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.lang.System.Logger;
 import java.security.KeyManagementException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
-import java.security.Provider;
 import java.security.SecureRandom;
 import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
@@ -17,22 +15,48 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Level;
-import java.util.prefs.Preferences;
 
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
-import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.databind.util.Annotations;
-
-import org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations.Providers;
-import org.springframework.boot.autoconfigure.web.ServerProperties.Undertow;
+import org.jboss.logging.Logger;
+import org.jboss.logging.Logger.Level;
+import org.jetbrains.annotations.NotNull;
 
 import ch.qos.logback.classic.BasicConfigurator;
+import io.undertow.Handlers;
+import io.undertow.Undertow;
+import io.undertow.UndertowOptions;
+import io.undertow.server.RoutingHandler;
+import io.undertow.server.handlers.PathHandler;
+import io.undertow.server.handlers.encoding.ContentEncodingRepository;
+import io.undertow.server.handlers.encoding.EncodingHandler;
+import io.undertow.server.handlers.encoding.GzipEncodingProvider;
+import it.theboys.project0002api.cardcast.CardcastService;
+import it.theboys.project0002api.game.Game;
+import it.theboys.project0002api.paths.AjaxPath;
+import it.theboys.project0002api.paths.EventsPath;
+import it.theboys.project0002api.paths.WebManifestPath;
+import it.theboys.project0002api.server.Annotations;
+import it.theboys.project0002api.server.Annotations.SocialLogin;
+import it.theboys.project0002api.server.Annotations.UsersWithAccount;
+import it.theboys.project0002api.server.CustomResourceHandler;
+import it.theboys.project0002api.server.HttpsRedirect;
+import it.theboys.project0002api.server.Provider;
+import it.theboys.project0002api.singletons.BanList;
+import it.theboys.project0002api.singletons.ConnectedUsers;
+import it.theboys.project0002api.singletons.Emails;
+import it.theboys.project0002api.singletons.GamesManager;
+import it.theboys.project0002api.singletons.LoadedCards;
+import it.theboys.project0002api.singletons.Preferences;
+import it.theboys.project0002api.singletons.PreparingShutdown;
+import it.theboys.project0002api.singletons.Providers;
+import it.theboys.project0002api.singletons.ServerDatabase;
+import it.theboys.project0002api.task.BroadcastGameListUpdateTask;
+import it.theboys.project0002api.task.UserPingTask;
 
 public class Server {
     private static final Logger logger = Logger.getLogger(Server.class);
@@ -44,13 +68,6 @@ public class Server {
     public static void main(String[] args) throws IOException, SQLException, UnrecoverableKeyException, CertificateException, NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
         BasicConfigurator.configure();
         Logger.getRootLogger().setLevel(Level.INFO);
-
-        for (String arg : args) {
-            if (arg.equals("--update")) {
-                Updater.update();
-                return;
-            }
-        }
 
 
         Preferences preferences = Preferences.load(args);
@@ -91,12 +108,6 @@ public class Server {
         UserPingTask userPingTask = new UserPingTask(connectedUsers, globalTimer);
         globalTimer.scheduleAtFixedRate(userPingTask, PING_START_DELAY, PING_CHECK_DELAY, TimeUnit.MILLISECONDS);
 
-        GithubAuthHelper githubAuthHelper = GithubAuthHelper.instantiate(preferences);
-        TwitterAuthHelper twitterAuthHelper = TwitterAuthHelper.instantiate(preferences);
-
-        SocialLogin socialLogin = new SocialLogin(githubAuthHelper, twitterAuthHelper, FacebookAuthHelper.instantiate(preferences), preferences);
-        Providers.add(Annotations.SocialLogin.class, (Provider<SocialLogin>) () -> socialLogin);
-
         CardcastService cardcastService = new CardcastService();
         Providers.add(Annotations.CardcastService.class, (Provider<CardcastService>) () -> cardcastService);
 
@@ -109,20 +120,7 @@ public class Server {
 
         PathHandler pathHandler = new PathHandler(resourceHandler);
         pathHandler.addExactPath("/AjaxServlet", new AjaxPath())
-                .addExactPath("/Events", Handlers.websocket(new EventsPath()))
-                .addExactPath("/Version", new VersionPath())
-                .addExactPath("/manifest.json", new WebManifestPath(preferences));
-
-        if (emails.enabled())
-            pathHandler.addExactPath("/VerifyEmail", new VerifyEmailPath(emails));
-
-        if (githubAuthHelper != null)
-            pathHandler.addExactPath("/GithubCallback", new GithubCallbackPath(githubAuthHelper));
-
-        if (twitterAuthHelper != null) {
-            pathHandler.addExactPath("/TwitterStartAuthFlow", new TwitterStartAuthFlowPath(twitterAuthHelper));
-            pathHandler.addExactPath("/TwitterCallback", new TwitterCallbackPath(twitterAuthHelper));
-        }
+                .addExactPath("/Events", Handlers.websocket(new EventsPath()));
 
         RoutingHandler router = new RoutingHandler();
         router.setFallbackHandler(pathHandler)

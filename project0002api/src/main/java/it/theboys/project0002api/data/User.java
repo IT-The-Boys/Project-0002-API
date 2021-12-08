@@ -4,12 +4,16 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.validation.constraints.NotNull;
-
-import org.springframework.data.mongodb.core.mapping.Unwrapped.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import it.theboys.project0002api.Consts;
-
+import it.theboys.project0002api.data.accounts.UserAccount;
+import it.theboys.project0002api.game.Game;
+import it.theboys.project0002api.paths.EventsPath;
+import it.theboys.project0002api.server.BaseCahHandler;
+import it.theboys.project0002api.singletons.PreparingShutdown;
+import it.theboys.project0002api.singletons.Sessions;
 
 public class User {
     private final String nickname;
@@ -21,7 +25,7 @@ public class User {
     private volatile long lastUserAction = System.currentTimeMillis();
     private Game currentGame;
     private boolean valid = true;
-    private EventsPath.EventsSender eventsSender = null;
+    private EvetsPath.EventsSender eventsSender = null;
     private volatile long whenPongRequested = -1;
 
     /**
