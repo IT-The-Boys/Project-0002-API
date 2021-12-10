@@ -1,19 +1,21 @@
 package it.theboys.project0002api.handlers;
 
-import java.util.Map;
-
-import javax.security.auth.login.Configuration.Parameters;
-import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.databind.util.Annotations;
-
-import org.bson.json.JsonObject;
-import org.springframework.boot.json.JsonParser;
-
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.Utils;
 import it.theboys.project0002api.data.JsonWrapper;
 import it.theboys.project0002api.data.User;
+import it.theboys.project0002api.data.accounts.UserAccount;
+import it.theboys.project0002api.server.Annotations;
+import it.theboys.project0002api.server.BaseCahHandler;
+import it.theboys.project0002api.server.Parameters;
+import it.theboys.project0002api.singletons.UsersWithAccount;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonSyntaxException;
+import io.undertow.server.HttpServerExchange;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Map;
 
 public class SetUserPreferencesHandler extends BaseHandler {
     public static final String OP = Consts.Operation.SET_USER_PREFERENCES.toString();

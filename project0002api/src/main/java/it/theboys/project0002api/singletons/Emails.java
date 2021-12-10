@@ -1,20 +1,24 @@
 package it.theboys.project0002api.singletons;
 
-import java.lang.System.Logger;
+import it.theboys.project0002api.Utils;
+import it.theboys.project0002api.data.accounts.PasswordAccount;
+import it.theboys.project0002api.data.accounts.UserAccount;
+import it.theboys.project0002api.server.BaseCahHandler;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.simplejavamail.email.Email;
+import org.simplejavamail.email.EmailBuilder;
+import org.simplejavamail.email.EmailPopulatingBuilder;
+import org.simplejavamail.mailer.Mailer;
+import org.simplejavamail.mailer.MailerBuilder;
+import org.simplejavamail.mailer.config.TransportStrategy;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.TimeUnit;
-
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-
-import org.springframework.data.mongodb.core.mapping.Unwrapped.Nullable;
-
-import it.theboys.project0002api.Utils;
-import it.theboys.project0002api.server.Annotations.Preferences;
-import it.theboys.project0002api.server.Annotations.UsersWithAccount;
-import it.theboys.project0002api.server.BaseCahHandler;
 
 public final class Emails {
     private static final int SEND_TIMEOUT = (int) TimeUnit.SECONDS.toMillis(10);

@@ -1,20 +1,16 @@
 package it.theboys.project0002api.singletons;
 
-import java.io.IOException;
-import java.lang.System.Logger;
-import java.sql.SQLException;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-
-import javax.validation.constraints.NotNull;
-
-import org.springframework.boot.autoconfigure.web.ServerProperties.Undertow;
-
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.data.EventWrapper;
 import it.theboys.project0002api.data.QueuedMessage;
-import it.theboys.project0002api.server.Annotations.SocialLogin;
 import it.theboys.project0002api.server.BaseCahHandler;
+import io.undertow.Undertow;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+
+import java.sql.SQLException;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public final class PreparingShutdown {
     private static final Logger logger = Logger.getLogger(PreparingShutdown.class);
@@ -22,18 +18,16 @@ public final class PreparingShutdown {
     private final Undertow server;
     private final ScheduledThreadPoolExecutor globalTimer;
     private final ConnectedUsers users;
-    private final SocialLogin socials;
     private final LoadedCards loadedCards;
     private final ServerDatabase serverDatabase;
     private final Object waitForEventsToBeSent = new Object();
     private boolean value = false;
     private long shutdownTime = -1;
 
-    private PreparingShutdown(Undertow server, ScheduledThreadPoolExecutor globalTimer, ConnectedUsers users, SocialLogin socials, LoadedCards loadedCards, ServerDatabase serverDatabase) {
+    private PreparingShutdown(Undertow server, ScheduledThreadPoolExecutor globalTimer, ConnectedUsers users, LoadedCards loadedCards, ServerDatabase serverDatabase) {
         this.server = server;
         this.globalTimer = globalTimer;
         this.users = users;
-        this.socials = socials;
         this.loadedCards = loadedCards;
         this.serverDatabase = serverDatabase;
     }
@@ -44,8 +38,8 @@ public final class PreparingShutdown {
         return instance;
     }
 
-    public static void setup(Undertow server, ScheduledThreadPoolExecutor globalTimer, ConnectedUsers users, SocialLogin socials, LoadedCards loadedCards, ServerDatabase serverDatabase) {
-        instance = new PreparingShutdown(server, globalTimer, users, socials, loadedCards, serverDatabase);
+    public static void setup(Undertow server, ScheduledThreadPoolExecutor globalTimer, ConnectedUsers users, LoadedCards loadedCards, ServerDatabase serverDatabase) {
+        instance = new PreparingShutdown(server, globalTimer, users, loadedCards, serverDatabase);
     }
 
     public synchronized void check() throws BaseCahHandler.CahException {
@@ -111,11 +105,10 @@ public final class PreparingShutdown {
 
         try {
             server.stop();
-            socials.close();
             loadedCards.close();
             serverDatabase.close();
             System.exit(0);
-        } catch (SQLException | IOException ex) {
+        } catch (SQLException ex) {
             logger.error("Shutdown wasn't clear.", ex);
             System.exit(1);
         }

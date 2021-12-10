@@ -1,21 +1,17 @@
 package it.theboys.project0002api.singletons;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.lang.System.Logger;
-import java.nio.charset.Charset;
-
-import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.core.JsonParser;
-import org.bson.json.JsonObject;
-import org.springframework.data.mongodb.core.mapping.Unwrapped.Nullable;
-
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.data.JsonWrapper;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.io.*;
+import java.nio.charset.Charset;
+
 
 public final class Preferences {
     private static final Logger logger = Logger.getLogger(Preferences.class);

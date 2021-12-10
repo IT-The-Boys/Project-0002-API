@@ -1,9 +1,10 @@
 package it.theboys.project0002api.singletons;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.validation.constraints.NotNull;
 
 public final class BanList {
     private final ServerDatabase db;

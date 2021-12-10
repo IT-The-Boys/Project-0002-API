@@ -1,6 +1,5 @@
 package it.theboys.project0002api.handlers;
 
-
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.data.JsonWrapper;
 import it.theboys.project0002api.data.User;
@@ -9,8 +8,6 @@ import it.theboys.project0002api.server.Annotations;
 import it.theboys.project0002api.server.BaseCahHandler;
 import it.theboys.project0002api.server.BaseJsonHandler;
 import it.theboys.project0002api.server.Parameters;
-import it.theboys.project0002api.server.Annotations.SocialLogin;
-import it.theboys.project0002api.server.Annotations.UsersWithAccount;
 import it.theboys.project0002api.singletons.*;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import io.undertow.server.HttpServerExchange;
@@ -18,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.text.ParseException;
 import java.util.regex.Pattern;
+
 
 public class CreateAccountHandler extends BaseHandler {
     public static final String OP = Consts.Operation.CREATE_ACCOUNT.toString();
@@ -29,7 +27,6 @@ public class CreateAccountHandler extends BaseHandler {
     public CreateAccountHandler(@Annotations.BanList BanList banList,
                                 @Annotations.ConnectedUsers ConnectedUsers connectedUsers,
                                 @Annotations.UsersWithAccount UsersWithAccount accounts,
-                                @Annotations.SocialLogin SocialLogin socialLogin,
                                 @Annotations.Emails Emails emails) {
         this.banList = banList;
         this.connectedUsers = connectedUsers;

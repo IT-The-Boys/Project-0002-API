@@ -1,20 +1,14 @@
 package it.theboys.project0002api.singletons;
 
-import java.lang.System.Logger;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.validation.constraints.NotNull;
-
 import it.theboys.project0002api.cards.PyxBlackCard;
 import it.theboys.project0002api.cards.PyxCardSet;
 import it.theboys.project0002api.cards.PyxWhiteCard;
-import it.theboys.project0002api.server.Annotations.Preferences;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+
+import java.sql.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public final class LoadedCards {
     private static final Logger logger = Logger.getLogger(LoadedCards.class);

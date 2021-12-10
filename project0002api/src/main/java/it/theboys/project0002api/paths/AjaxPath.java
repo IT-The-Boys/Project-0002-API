@@ -1,14 +1,13 @@
 package it.theboys.project0002api.paths;
 
-import com.google.gson.JsonElement;
-
-import org.jetbrains.annotations.Nullable;
-
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.data.User;
 import it.theboys.project0002api.server.BaseCahHandler;
 import it.theboys.project0002api.server.Parameters;
 import it.theboys.project0002api.singletons.Handlers;
+import com.google.gson.JsonElement;
+import io.undertow.server.HttpServerExchange;
+import org.jetbrains.annotations.Nullable;
 
 public class AjaxPath extends BaseCahHandler {
 

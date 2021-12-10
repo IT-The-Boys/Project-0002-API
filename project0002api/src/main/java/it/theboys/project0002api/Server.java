@@ -1,32 +1,15 @@
 package it.theboys.project0002api;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.security.KeyManagementException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-import java.security.UnrecoverableKeyException;
-import java.security.cert.CertificateException;
-import java.sql.SQLException;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.TrustManagerFactory;
-
-import org.jboss.logging.Logger;
-import org.jboss.logging.Logger.Level;
-import org.jetbrains.annotations.NotNull;
-
-import ch.qos.logback.classic.BasicConfigurator;
+import it.theboys.project0002api.cardcast.CardcastService;
+import it.theboys.project0002api.game.Game;
+import it.theboys.project0002api.paths.*;
+import it.theboys.project0002api.server.Annotations;
+import it.theboys.project0002api.server.CustomResourceHandler;
+import it.theboys.project0002api.server.HttpsRedirect;
+import it.theboys.project0002api.server.Provider;
+import it.theboys.project0002api.singletons.*;
+import it.theboys.project0002api.task.BroadcastGameListUpdateTask;
+import it.theboys.project0002api.task.UserPingTask;
 import io.undertow.Handlers;
 import io.undertow.Undertow;
 import io.undertow.UndertowOptions;
@@ -35,28 +18,23 @@ import io.undertow.server.handlers.PathHandler;
 import io.undertow.server.handlers.encoding.ContentEncodingRepository;
 import io.undertow.server.handlers.encoding.EncodingHandler;
 import io.undertow.server.handlers.encoding.GzipEncodingProvider;
-import it.theboys.project0002api.cardcast.CardcastService;
-import it.theboys.project0002api.game.Game;
-import it.theboys.project0002api.paths.AjaxPath;
-import it.theboys.project0002api.paths.EventsPath;
-import it.theboys.project0002api.paths.WebManifestPath;
-import it.theboys.project0002api.server.Annotations;
-import it.theboys.project0002api.server.Annotations.SocialLogin;
-import it.theboys.project0002api.server.Annotations.UsersWithAccount;
-import it.theboys.project0002api.server.CustomResourceHandler;
-import it.theboys.project0002api.server.HttpsRedirect;
-import it.theboys.project0002api.server.Provider;
-import it.theboys.project0002api.singletons.BanList;
-import it.theboys.project0002api.singletons.ConnectedUsers;
-import it.theboys.project0002api.singletons.Emails;
-import it.theboys.project0002api.singletons.GamesManager;
-import it.theboys.project0002api.singletons.LoadedCards;
-import it.theboys.project0002api.singletons.Preferences;
-import it.theboys.project0002api.singletons.PreparingShutdown;
-import it.theboys.project0002api.singletons.Providers;
-import it.theboys.project0002api.singletons.ServerDatabase;
-import it.theboys.project0002api.task.BroadcastGameListUpdateTask;
-import it.theboys.project0002api.task.UserPingTask;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+
+import javax.net.ssl.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.security.*;
+import java.security.cert.CertificateException;
+import java.sql.SQLException;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+
 
 public class Server {
     private static final Logger logger = Logger.getLogger(Server.class);
@@ -146,7 +124,7 @@ public class Server {
         }
 
         Undertow server = builder.build();
-        PreparingShutdown.setup(server, globalTimer, connectedUsers, socialLogin, loadedCards, serverDatabase);
+        PreparingShutdown.setup(server, globalTimer, connectedUsers, loadedCards, serverDatabase);
         server.start();
         logger.info("Server started!");
     }

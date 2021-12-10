@@ -1,8 +1,25 @@
 package it.theboys.project0002api.paths;
 
 
+import it.theboys.project0002api.Consts;
+import it.theboys.project0002api.data.JsonWrapper;
+import it.theboys.project0002api.data.QueuedMessage;
+import it.theboys.project0002api.data.User;
+import it.theboys.project0002api.singletons.PreparingShutdown;
+import it.theboys.project0002api.singletons.Sessions;
+import com.google.gson.JsonArray;
+import io.undertow.server.handlers.Cookie;
+import io.undertow.server.protocol.framed.AbstractFramedChannel;
+import io.undertow.util.Cookies;
+import io.undertow.util.Headers;
+import io.undertow.websockets.WebSocketConnectionCallback;
+import io.undertow.websockets.core.WebSocketChannel;
+import io.undertow.websockets.core.WebSockets;
+import io.undertow.websockets.spi.WebSocketHttpExchange;
+import org.apache.log4j.Logger;
+import org.xnio.ChannelListener;
+
 import java.io.IOException;
-import java.lang.System.Logger;
 import java.nio.channels.ClosedChannelException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,24 +29,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.PriorityBlockingQueue;
 
-import com.google.gson.JsonArray;
-
-import org.apache.http.cookie.Cookie;
-import org.springframework.web.servlet.function.ServerRequest.Headers;
-import org.xnio.ChannelListener;
-
-import io.undertow.server.protocol.framed.AbstractFramedChannel;
-import io.undertow.util.Cookies;
-import io.undertow.websockets.WebSocketConnectionCallback;
-import io.undertow.websockets.core.WebSocketChannel;
-import io.undertow.websockets.core.WebSockets;
-import io.undertow.websockets.spi.WebSocketHttpExchange;
-import it.theboys.project0002api.Consts;
-import it.theboys.project0002api.data.JsonWrapper;
-import it.theboys.project0002api.data.QueuedMessage;
-import it.theboys.project0002api.data.User;
-import it.theboys.project0002api.singletons.PreparingShutdown;
-import it.theboys.project0002api.singletons.Sessions;
 
 public class EventsPath implements WebSocketConnectionCallback {
     /**
@@ -163,3 +162,4 @@ public class EventsPath implements WebSocketConnectionCallback {
             }
         }
     }
+}

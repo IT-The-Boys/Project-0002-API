@@ -1,6 +1,5 @@
 package it.theboys.project0002api.game;
 
-
 /**
  * An exception to be thrown when a deck is out of cards in the draw stack.
  */

@@ -1,11 +1,11 @@
 package it.theboys.project0002api.singletons;
 
-import java.lang.System.Logger;
+import it.theboys.project0002api.server.Provider;
+import org.apache.log4j.Logger;
+
 import java.lang.annotation.Annotation;
 import java.util.HashMap;
 import java.util.Map;
-
-import it.theboys.project0002api.server.Provider;
 
 public final class Providers {
     private final static Logger logger = Logger.getLogger(Providers.class);

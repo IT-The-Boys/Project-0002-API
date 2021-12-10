@@ -1,5 +1,10 @@
 package it.theboys.project0002api.singletons;
 
+import it.theboys.project0002api.Consts;
+import it.theboys.project0002api.handlers.*;
+import it.theboys.project0002api.server.BaseCahHandler;
+import org.jetbrains.annotations.NotNull;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Parameter;
@@ -7,47 +12,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.validation.constraints.NotNull;
-
-import org.apache.catalina.authenticator.jaspic.PersistentProviderRegistrations.Providers;
-
-import it.theboys.project0002api.Consts;
-import it.theboys.project0002api.handlers.BanHandler;
-import it.theboys.project0002api.handlers.BaseHandler;
-import it.theboys.project0002api.handlers.CardcastAddCardsetHandler;
-import it.theboys.project0002api.handlers.CardcastListCardsetsHandler;
-import it.theboys.project0002api.handlers.CardcastRemoveCardsetHandler;
-import it.theboys.project0002api.handlers.ChangeGameOptionsHandler;
-import it.theboys.project0002api.handlers.ChatHandler;
-import it.theboys.project0002api.handlers.CreateAccountHandler;
-import it.theboys.project0002api.handlers.CreateGameHandler;
-import it.theboys.project0002api.handlers.DislikeGameHandler;
-import it.theboys.project0002api.handlers.FirstLoadHandler;
-import it.theboys.project0002api.handlers.GameChatHandler;
-import it.theboys.project0002api.handlers.GameListHandler;
-import it.theboys.project0002api.handlers.GameOptionsSuggestionDecisionHandler;
-import it.theboys.project0002api.handlers.GetCardsHandler;
-import it.theboys.project0002api.handlers.GetGameInfoHandler;
-import it.theboys.project0002api.handlers.GetMeHandler;
-import it.theboys.project0002api.handlers.GetSuggestedGameOptionsHandler;
-import it.theboys.project0002api.handlers.GetUserPreferencesHandler;
-import it.theboys.project0002api.handlers.JoinGameHandler;
-import it.theboys.project0002api.handlers.JudgeSelectHandler;
-import it.theboys.project0002api.handlers.KickHandler;
-import it.theboys.project0002api.handlers.LeaveGameHandler;
-import it.theboys.project0002api.handlers.LikeGameHandler;
-import it.theboys.project0002api.handlers.LogoutHandler;
-import it.theboys.project0002api.handlers.NamesHandler;
-import it.theboys.project0002api.handlers.PlayCardHandler;
-import it.theboys.project0002api.handlers.PongHandler;
-import it.theboys.project0002api.handlers.PrepareShutdownHandler;
-import it.theboys.project0002api.handlers.RegisterHandler;
-import it.theboys.project0002api.handlers.SetUserPreferencesHandler;
-import it.theboys.project0002api.handlers.SpectateGameHandler;
-import it.theboys.project0002api.handlers.StartGameHandler;
-import it.theboys.project0002api.handlers.StopGameHandler;
-import it.theboys.project0002api.server.BaseCahHandler;
 
 public final class Handlers {
     private final static Map<String, Class<? extends BaseHandler>> LIST;

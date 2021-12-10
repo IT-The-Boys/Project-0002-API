@@ -16,11 +16,4 @@ public class PongHandler extends BaseHandler {
         user.userReceivedEvents();
         return JsonWrapper.EMPTY;
     }
-
-    @Override
-    public @NotNull JsonWrapper handle(User user, java.security.Policy.Parameters params, HttpServerExchange exchange)
-            throws StatusException {
-        // TODO Auto-generated method stub
-        return null;
-    }
 }

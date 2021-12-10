@@ -1,20 +1,19 @@
 package it.theboys.project0002api.paths;
 
+import it.theboys.project0002api.singletons.Preferences;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import io.undertow.server.HttpHandler;
+import io.undertow.server.HttpServerExchange;
+import io.undertow.server.handlers.Cookie;
+import io.undertow.util.Headers;
+import org.apache.log4j.Logger;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
-import java.lang.System.Logger;
 import java.net.URLDecoder;
-
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-import org.apache.http.cookie.Cookie;
-import org.springframework.http.server.reactive.HttpHandler;
-import org.springframework.web.servlet.function.ServerRequest.Headers;
-
-import it.theboys.project0002api.singletons.Preferences;
 
 public class WebManifestPath implements HttpHandler {
     private static final Logger logger = Logger.getLogger(WebManifestPath.class);

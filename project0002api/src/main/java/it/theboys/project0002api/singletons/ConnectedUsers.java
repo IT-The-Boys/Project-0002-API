@@ -1,24 +1,19 @@
 package it.theboys.project0002api.singletons;
 
-import java.lang.System.Logger;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.concurrent.TimeUnit;
-
-import javax.validation.constraints.NotNull;
-
-import org.springframework.data.mongodb.core.mapping.Unwrapped.Nullable;
 
 import it.theboys.project0002api.Consts;
 import it.theboys.project0002api.data.EventWrapper;
 import it.theboys.project0002api.data.QueuedMessage;
 import it.theboys.project0002api.data.User;
-import it.theboys.project0002api.server.Annotations.Preferences;
+import it.theboys.project0002api.data.accounts.UserAccount;
 import it.theboys.project0002api.server.BaseCahHandler;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.concurrent.TimeUnit;
 
 
 public final class ConnectedUsers {
