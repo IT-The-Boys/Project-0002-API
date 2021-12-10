@@ -1,16 +1,22 @@
 package it.theboys.project0002api.singletons;
 
-import it.theboys.project0002api.Consts;
-import it.theboys.project0002api.data.JsonWrapper;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.*;
-import java.nio.charset.Charset;
+import it.theboys.project0002api.Consts;
+import it.theboys.project0002api.data.JsonWrapper;
 
 
 public final class Preferences {
