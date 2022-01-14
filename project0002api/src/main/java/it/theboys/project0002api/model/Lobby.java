@@ -1,5 +1,6 @@
 package it.theboys.project0002api.model;
 
+<<<<<<< HEAD
 import it.theboys.project0002api.enums.db.GameName;
 import it.theboys.project0002api.model.database.User;
 import lombok.Data;
@@ -38,4 +39,16 @@ public class Lobby {
     public void removeServer(String server) {
         gameList.add(server);
     }
+=======
+import lombok.Data;
+
+@Data
+public class Lobby {
+
+    private String lobbyId;
+    private Player player1;
+    private Player player2;
+    
+>>>>>>> Andreas
 }
+
