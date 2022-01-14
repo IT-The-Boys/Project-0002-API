@@ -7,6 +7,7 @@ import lombok.Data;
 @Data
 public class Game {
 
+    private String gameName;
     private String gameId;
     private Chat chat;
     private final ArrayList<Player> players = new ArrayList<Player>();

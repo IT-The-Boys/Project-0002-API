@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import it.theboys.project0002api.controller.dto.ConnectRequest;
+import it.theboys.project0002api.controller.dto.StartGameServerRequest;
 import it.theboys.project0002api.exception.InvalidChatException;
 import it.theboys.project0002api.exception.InvalidGameException;
 import it.theboys.project0002api.exception.InvalidParamException;
@@ -29,9 +30,9 @@ public class GameServerController {
 
     //Start tested and working
     @PostMapping("/start")
-    public ResponseEntity<Game> start(@RequestBody Player player) {
-        log.info("start game request: {}", player);
-        return ResponseEntity.ok(gameServerService.createGame(player));
+    public ResponseEntity<Game> start(@RequestBody StartGameServerRequest request) {
+        log.info("start game request: {}", request);
+        return ResponseEntity.ok(gameServerService.createGame(request.getPlayer(), request.getGameName()));
     }
 
     @PostMapping("/connect")

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,12 @@ public class LobbyController {
     public ResponseEntity<Map<Lobby, List<?>>> start(@RequestBody Game game) {
         log.info("start lobby request: {}", game);
         return ResponseEntity.ok(lobbyService.addGameServer(game));
+    }
+
+    @GetMapping("/gameServerList")
+    public ResponseEntity<Map<String, Game>> gameServerList() {
+        log.info("start lobby request: Show gameserverlist");
+        return ResponseEntity.ok(lobbyService.showGameServerList());
     }
 
 }

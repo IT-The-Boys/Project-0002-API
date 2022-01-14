@@ -20,9 +20,10 @@ public class GameServerService {
 
     private final ChatService chatService;
 
-    public Game createGame(Player player) {
+    public Game createGame(Player player, String gameName) {
         Game game = new Game();
         game.setGameId(UUID.randomUUID().toString());
+        game.setGameName(gameName);
         game.addPlayer(player);
         game.setStatus(GameStatus.NEW);
         game.setChat(chatService.createChat(player));

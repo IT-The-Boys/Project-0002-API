@@ -36,6 +36,7 @@ public class ChatService {
         return chat;
     }
 
+    //Get the chat tested and working
     public Chat send(Send send) throws NotFoundException, InvalidChatException {
         if (!ChatStorage.getInstance().getChats().containsKey(send.getChatId())) {
             throw new NotFoundException("Chat not found");

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 import it.theboys.project0002api.model.Game;
 import it.theboys.project0002api.model.Lobby;
+import it.theboys.project0002api.storage.GameStorage;
 
 @Service
 public class LobbyService {
@@ -26,5 +27,10 @@ public class LobbyService {
 
     public Map<Lobby, List<?>> addGameServer(Game game) {
         return updateLobby();
+    }
+
+    public Map<String, Game> showGameServerList(){
+        Map<String, Game> gameList = GameStorage.getInstance().getGames();
+        return gameList;
     }
 }

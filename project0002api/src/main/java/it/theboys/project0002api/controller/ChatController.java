@@ -1,6 +1,10 @@
 package it.theboys.project0002api.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,6 +15,7 @@ import it.theboys.project0002api.exception.InvalidChatException;
 import it.theboys.project0002api.exception.InvalidParamException;
 import it.theboys.project0002api.exception.NotFoundException;
 import it.theboys.project0002api.model.Chat;
+import it.theboys.project0002api.model.ChatMessage;
 import it.theboys.project0002api.model.Player;
 import it.theboys.project0002api.model.Send;
 import it.theboys.project0002api.service.ChatService;
@@ -41,6 +46,7 @@ public class ChatController {
         return ResponseEntity.ok(chatService.connectToChat(request.getPlayer(), request.getChatId()));
     }
 
+    //Get the chat tested and working
     // Room chat
     @PostMapping("/send")
     public ResponseEntity<Chat> send(@RequestBody Send request) throws NotFoundException, InvalidChatException {
@@ -57,6 +63,20 @@ public class ChatController {
         Chat chat = chatService.send(request);
         simpMessagingTemplate.convertAndSend("/topic/chat/global", chat);
         return ResponseEntity.ok(chat);
+    }
+
+    //Temporary shit from previous project
+    @MessageMapping("/chat.register")
+    @SendTo("/topic/public")
+    public ChatMessage register(@Payload ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor) {
+        headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
+        return chatMessage;
+    }
+
+    @MessageMapping("/chat.send")
+    @SendTo("/topic/public")
+    public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {
+        return chatMessage;
     }
 
 }
