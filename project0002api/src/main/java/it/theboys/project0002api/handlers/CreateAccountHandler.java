@@ -9,7 +9,6 @@ import it.theboys.project0002api.server.BaseCahHandler;
 import it.theboys.project0002api.server.BaseJsonHandler;
 import it.theboys.project0002api.server.Parameters;
 import it.theboys.project0002api.singletons.*;
-import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import io.undertow.server.HttpServerExchange;
 import org.jetbrains.annotations.NotNull;
 
