@@ -1,0 +1,52 @@
+package it.theboys.project0002api.handlers;
+
+
+import it.theboys.project0002api.Consts;
+import it.theboys.project0002api.cardcast.CardcastDeck;
+import it.theboys.project0002api.cardcast.CardcastService;
+import it.theboys.project0002api.data.EventWrapper;
+import it.theboys.project0002api.data.JsonWrapper;
+import it.theboys.project0002api.data.QueuedMessage;
+import it.theboys.project0002api.data.User;
+import it.theboys.project0002api.game.Game;
+import it.theboys.project0002api.server.Annotations;
+import it.theboys.project0002api.server.BaseCahHandler;
+import it.theboys.project0002api.server.Parameters;
+import it.theboys.project0002api.singletons.GamesManager;
+import io.undertow.server.HttpServerExchange;
+import org.jetbrains.annotations.NotNull;
+
+public class CardcastRemoveCardsetHandler extends GameWithPlayerHandler {
+    public static final String OP = Consts.Operation.CARDCAST_REMOVE_CARDSET.toString();
+    private final CardcastService cardcastService;
+
+    public CardcastRemoveCardsetHandler(@Annotations.GameManager GamesManager gamesManager, @Annotations.CardcastService CardcastService cardcastService) {
+        super(gamesManager);
+        this.cardcastService = cardcastService;
+    }
+
+    @NotNull
+    @Override
+    public JsonWrapper handleWithUserInGame(User user, Game game, Parameters params, HttpServerExchange exchange) throws BaseCahHandler.CahException {
+        if (game.getHost() != user) throw new BaseCahHandler.CahException(Consts.ErrorCode.NOT_GAME_HOST);
+        if (game.getState() != Consts.GameState.LOBBY)
+            throw new BaseCahHandler.CahException(Consts.ErrorCode.ALREADY_STARTED);
+
+        String deckId = params.getStringNotNull(Consts.GeneralKeys.CARDCAST_ID);
+        if (deckId.isEmpty()) throw new BaseCahHandler.CahException(Consts.ErrorCode.BAD_REQUEST);
+        if (deckId.length() != 5) throw new BaseCahHandler.CahException(Consts.ErrorCode.CARDCAST_INVALID_ID);
+        deckId = deckId.toUpperCase();
+
+        // Remove it from the set regardless if it loads or not.
+        if (game.getCardcastDeckCodes().remove(deckId)) {
+            CardcastDeck deck = cardcastService.loadSet(deckId);
+            if (deck == null) throw new BaseCahHandler.CahException(Consts.ErrorCode.CARDCAST_CANNOT_FIND);
+
+            EventWrapper ev = new EventWrapper(game, Consts.Event.CARDCAST_REMOVE_CARDSET);
+            ev.add(Consts.GeneralKeys.CARDCAST_DECK_INFO, deck.getClientMetadataJson());
+            game.broadcastToPlayers(QueuedMessage.MessageType.GAME_EVENT, ev);
+        }
+
+        return JsonWrapper.EMPTY;
+    }
+}
