@@ -34,8 +34,11 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import javax.websocket.OnMessage;
+import javax.websocket.server.ServerEndpoint;
 
 
+@ServerEndpoint("/cardsagainsthumanity")
 public class Server {
     private static final Logger logger = Logger.getLogger(Server.class);
     private static final long PING_START_DELAY = TimeUnit.SECONDS.toMillis(60);
@@ -43,6 +46,7 @@ public class Server {
     private static final long BROADCAST_UPDATE_START_DELAY = TimeUnit.SECONDS.toMillis(60);
     private static final long BROADCAST_UPDATE_DELAY = TimeUnit.SECONDS.toMillis(60);
 
+    @OnMessage
     public static void main(String[] args) throws IOException, SQLException, UnrecoverableKeyException, CertificateException, NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
         BasicConfigurator.configure();
         Logger.getRootLogger().setLevel(Level.INFO);
