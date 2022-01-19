@@ -9,12 +9,12 @@ import java.util.List;
 import java.util.Map;
 
 
-public class LobbyStorage {
+public class MainLobbyStorage {
     private static Map<GameName, MainLobby> lobbyList;
-    private static LobbyStorage instance;
+    private static MainLobbyStorage instance;
 
 
-    private LobbyStorage() {
+    private MainLobbyStorage() {
         lobbyList = new HashMap<>();
         for (GameName game : GameName.values()) {
             lobbyList.put(game, new MainLobby(game));
@@ -22,9 +22,9 @@ public class LobbyStorage {
 
     }
 
-    public static synchronized LobbyStorage getInstance() {
+    public static synchronized MainLobbyStorage getInstance() {
         if (instance == null) {
-            instance = new LobbyStorage();
+            instance = new MainLobbyStorage();
         }
         return instance;
     }
