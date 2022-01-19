@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class Lobby {
+public class MainLobby {
     private GameName lobbyId;
     private String lobbyName;
     private String lobbyImg;
     private List<String> playerList;
     private List<String> gameList;
 
-    public Lobby(GameName gameName) {
+    public MainLobby(GameName gameName) {
         lobbyId = gameName;
         lobbyName = gameName.getDesc();
         lobbyImg = String.format("https://itboys-project0002.s3.ap-northeast-1.amazonaws.com/img/lobby/%s.jpg", lobbyId.toString().toLowerCase());

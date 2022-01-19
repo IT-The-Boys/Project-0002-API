@@ -1,7 +1,7 @@
 package it.theboys.project0002api.storage;
 
 import it.theboys.project0002api.enums.db.GameName;
-import it.theboys.project0002api.model.Lobby;
+import it.theboys.project0002api.model.MainLobby;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,14 +10,14 @@ import java.util.Map;
 
 
 public class LobbyStorage {
-    private static Map<GameName, Lobby> lobbyList;
+    private static Map<GameName, MainLobby> lobbyList;
     private static LobbyStorage instance;
 
 
     private LobbyStorage() {
         lobbyList = new HashMap<>();
         for (GameName game : GameName.values()) {
-            lobbyList.put(game, new Lobby(game));
+            lobbyList.put(game, new MainLobby(game));
         }
 
     }
@@ -29,15 +29,15 @@ public class LobbyStorage {
         return instance;
     }
 
-    public List<Lobby> getLobbyList() {
+    public List<MainLobby> getLobbyList() {
 
-        return new ArrayList<Lobby>(lobbyList.values());
+        return new ArrayList<MainLobby>(lobbyList.values());
     }
 
-    public Map<GameName, Lobby> getLobbyMap(){
+    public Map<GameName, MainLobby> getLobbyMap(){
         return lobbyList;
     };
-    public void setLobby(Lobby lobby) {
-        lobbyList.put(lobby.getLobbyId(), lobby);
+    public void setLobby(MainLobby mainLobby) {
+        lobbyList.put(mainLobby.getLobbyId(), mainLobby);
     }
 }

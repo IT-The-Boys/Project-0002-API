@@ -2,7 +2,7 @@ package it.theboys.project0002api.controller;
 
 import it.theboys.project0002api.enums.db.GameName;
 import it.theboys.project0002api.exception.LobbyException;
-import it.theboys.project0002api.model.Lobby;
+import it.theboys.project0002api.model.MainLobby;
 import it.theboys.project0002api.service.MainLobbyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,7 +22,7 @@ public class MainLobbyController {
         return new ResponseEntity<>(lobbyService.getLobbyList(), HttpStatus.OK);
     }
     @GetMapping("/{gameName}/lobby")
-    public ResponseEntity<Lobby> getLobbyInfo(@PathVariable GameName gameName){
+    public ResponseEntity<MainLobby> getLobbyInfo(@PathVariable GameName gameName){
         return new ResponseEntity<>(lobbyService.getLobby(gameName), HttpStatus.OK);
     }
 

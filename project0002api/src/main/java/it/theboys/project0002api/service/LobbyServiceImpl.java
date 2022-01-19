@@ -2,7 +2,7 @@ package it.theboys.project0002api.service;
 
 import it.theboys.project0002api.enums.db.GameName;
 import it.theboys.project0002api.exception.LobbyException;
-import it.theboys.project0002api.model.Lobby;
+import it.theboys.project0002api.model.MainLobby;
 import it.theboys.project0002api.storage.LobbyStorage;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,45 +14,45 @@ import java.util.List;
 public class LobbyServiceImpl implements MainLobbyService {
 
     @Override
-    public List<Lobby> getLobbyList() {
+    public List<MainLobby> getLobbyList() {
         return LobbyStorage.getInstance().getLobbyList();
     }
 
     @Override
-    public Lobby getLobby(GameName gameName) {
+    public MainLobby getLobby(GameName gameName) {
         return LobbyStorage.getInstance().getLobbyMap().get(gameName);
     }
 
     @Override
-    public Lobby joinLobby(GameName gameName, String userId) throws LobbyException {
+    public MainLobby joinLobby(GameName gameName, String userId) throws LobbyException {
         if (!LobbyStorage.getInstance().getLobbyMap().containsKey(gameName)) {
             throw new LobbyException(LobbyException.NotFoundException(gameName));
         }
-        Lobby lobby = LobbyStorage.getInstance().getLobbyMap().get(gameName);
-        //check if lobby contains player from request
-        if (lobby.getPlayerList().contains(userId)) {
-            return lobby;
+        MainLobby mainLobby = LobbyStorage.getInstance().getLobbyMap().get(gameName);
+        //check if mainLobby contains player from request
+        if (mainLobby.getPlayerList().contains(userId)) {
+            return mainLobby;
         } else {
-            lobby.addPlayer(userId);
+            mainLobby.addPlayer(userId);
         }
-        LobbyStorage.getInstance().setLobby(lobby);
-        return lobby;
+        LobbyStorage.getInstance().setLobby(mainLobby);
+        return mainLobby;
     }
 
     @Override
-    public Lobby leaveLobby(GameName gameName, String userId) throws LobbyException {
+    public MainLobby leaveLobby(GameName gameName, String userId) throws LobbyException {
         if (!LobbyStorage.getInstance().getLobbyMap().containsKey(gameName)) {
             throw new LobbyException(LobbyException.NotFoundException(gameName));
         }
-        Lobby lobby = LobbyStorage.getInstance().getLobbyMap().get(gameName);
-        //check if lobby contains player from request
-        if (!lobby.getPlayerList().contains(userId)) {
+        MainLobby mainLobby = LobbyStorage.getInstance().getLobbyMap().get(gameName);
+        //check if mainLobby contains player from request
+        if (!mainLobby.getPlayerList().contains(userId)) {
             throw new LobbyException(LobbyException.UserNotFoundException(gameName, userId));
         } else {
-            lobby.removePlayer(userId);
+            mainLobby.removePlayer(userId);
         }
-        LobbyStorage.getInstance().setLobby(lobby);
-        return lobby;
+        LobbyStorage.getInstance().setLobby(mainLobby);
+        return mainLobby;
     }
 
 
