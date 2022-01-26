@@ -1,9 +1,22 @@
 package it.theboys.project0002api.cardcast;
 
+import java.io.IOException;
+import java.lang.ref.SoftReference;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.regex.Pattern;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
@@ -17,13 +30,6 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.jboss.logging.Logger;
 import org.jetbrains.annotations.Nullable;
-
-import java.io.IOException;
-import java.lang.ref.SoftReference;
-import java.util.*;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.regex.Pattern;
 
 
 public class CardcastService {
@@ -103,7 +109,7 @@ public class CardcastService {
                 return null;
             }
 
-            JsonObject info = parser.parse(infoContent).getAsJsonObject();
+            JsonObject info = JsonParser.parseString(infoContent).getAsJsonObject();
 
             String cardContent = getUrlContent(String.format(CARD_SET_CARDS_URL_FORMAT_STRING, setId));
             if (cardContent == null) {
@@ -112,7 +118,7 @@ public class CardcastService {
                 return null;
             }
 
-            JsonObject cards = parser.parse(cardContent).getAsJsonObject();
+            JsonObject cards = JsonParser.parseString(cardContent).getAsJsonObject();
 
             String name = info.get("name").getAsString();
             String description = info.get("description").getAsString();

@@ -18,7 +18,7 @@ public class PasswordAccount extends UserAccount {
     }
 
     public PasswordAccount(String username, String email, boolean emailVerified, @NotNull String hashedPassword) {
-        super(username, email, Consts.AuthType.PASSWORD, emailVerified, null); // TODO: Avatar
+        super(username, email, Consts.AuthType.PASSWORD, emailVerified, null); 
 
         this.hashedPassword = hashedPassword;
     }

@@ -26,7 +26,7 @@ public class WebManifestPath implements HttpHandler {
             logger.error("Missing base manifest file. Loading empty.");
             baseManifest = new JsonObject();
         } else {
-            baseManifest = new JsonParser().parse(new InputStreamReader(new FileInputStream(manifest))).getAsJsonObject();
+            baseManifest = JsonParser.parseReader(new InputStreamReader(new FileInputStream(manifest))).getAsJsonObject();
         }
 
         baseManifestString = baseManifest.toString();
